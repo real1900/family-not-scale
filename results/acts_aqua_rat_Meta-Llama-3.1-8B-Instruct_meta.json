@@ -1,0 +1,846 @@
+{
+  "model": "unsloth/Meta-Llama-3.1-8B-Instruct",
+  "dataset": "aqua_rat",
+  "meta": [
+    {
+      "qid": 1,
+      "labels": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E"
+      ],
+      "gold": "D",
+      "direct": "C",
+      "cot": "C",
+      "cot_text": "To find the length of the ship, we need to use the information given about the time it takes to pass through the channel and the gates.\n\nFirst, let's find the speed of the ship. We know that it takes 240 seconds to pass through a 750m channel. \n\nSpeed = Distance / Time\nSpeed = 750m / 240s\nSpeed = 3.125 m/s\n\nNow, we know that it takes 60 seconds to pass through the gates. Let's assume the length of the ship is 'L'. When the ship passes through the gates, it covers its own length in 60 seconds.\n\nSpeed = Distance / Time\n3.125 m/s = L / 60s\nL = 3.125 m/s * 60s\nL = 187.5 m\n\nHowever, we need to consider that the ship is passing through the gates, which means it is covering its own length plus the width of the gates. Since we don't have any information about the width of the gates, we can assume that the ship is covering its own length in the given time. \n\nBut, we can see that the options are in multiples of 50m. So, we can try to find the closest option to our calculated value.\n\nThe closest option to 187.5m is 200m.\n\nThe answer is (C)."
+    },
+    {
+      "qid": 88,
+      "labels": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E"
+      ],
+      "gold": "C",
+      "direct": "B",
+      "cot": "C",
+      "cot_text": "To solve this problem, let's break it down step by step.\n\nLet the certain number be 'x'. \n\nThe mean proportional between two numbers 'a' and 'b' is given by \u221a(a * b).\n\nAccording to the problem, the mean proportional between 45 and 'x' is three times the mean proportional between 5 and 22. \n\nSo, we can write the equation as:\n\u221a(45 * x) = 3 * \u221a(5 * 22)\n\nNow, let's simplify the equation:\n\u221a(45 * x) = 3 * \u221a(110)\n\nTo get rid of the square root, we'll square both sides of the equation:\n45 * x = 9 * 110\n\nNow, let's simplify the equation:\n45 * x = 990\n\nTo find the value of 'x', we'll divide both sides of the equation by 45:\nx = 990 / 45\n\nx = 22\n\nSo, the number is 22.\n\nThe answer is (C)."
+    },
+    {
+      "qid": 132,
+      "labels": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E"
+      ],
+      "gold": "A",
+      "direct": "D",
+      "cot": "E",
+      "cot_text": "Let's break down the information given:\n\n1. Company X has 40 employees.\n2. Company Y has 50 employees.\n3. Both companies have the same number of full-time employees.\n4. Company Y has 4 more than twice the number of part-time employees that Company X has.\n\nLet's denote the number of full-time employees in both companies as F and the number of part-time employees in Company X as P.\n\nFrom point 3, we know that F (full-time employees) is the same for both companies. \n\nFrom point 1, we know that the total number of employees in Company X is 40, so F + P = 40.\n\nFrom point 2, we know that the total number of employees in Company Y is 50, so F + (2P + 4) = 50.\n\nNow we have two equations:\n\n1. F + P = 40\n2. F + (2P + 4) = 50\n\nWe can solve these equations to find the values of F and P.\n\nFirst, let's subtract equation 1 from equation 2:\n\n(F + (2P + 4)) - (F + P) = 50 - 40\n2P + 4 - P = 10\nP + 4 = 10\n\nNow, let's subtract 4 from both sides:\n\nP = 6\n\nNow that we know P (the number of part-time employees in Company X), we can find the number of part-time employees in Company Y.\n\nFrom point 4, we"
+    },
+    {
+      "qid": 231,
+      "labels": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E"
+      ],
+      "gold": "E",
+      "direct": "B",
+      "cot": "E",
+      "cot_text": "To solve this problem, let's break it down step by step.\n\n1. There are twice as many girls as boys in the group of 18 children. \n   Let's assume the number of boys is B. Then, the number of girls is 2B. \n   Since the total number of children is 18, we can write the equation: B + 2B = 18\n   Combining like terms, we get 3B = 18. \n   Dividing both sides by 3, we find B = 6. \n   So, the number of boys is 6, and the number of girls is 2B = 2 * 6 = 12.\n\n2. There are twice as many right-handed people as there are left-handed people. \n   Let's assume the number of left-handed people is L. Then, the number of right-handed people is 2L. \n   We know that a sixth of the boys are left-handed. Since there are 6 boys, a sixth of them is 6 / 6 = 1. \n   So, the number of left-handed boys is 1. \n   Let's assume the number of left-handed girls is G. \n   Then, the total number of left-handed people is L = 1 (left-handed boys) + G (left-handed girls).\n\n3. Since the total number of children is 18, and we already know that there are 6 boys, the number of girls is 12. \n   We also know that the number of"
+    },
+    {
+      "qid": 162,
+      "labels": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E"
+      ],
+      "gold": "B",
+      "direct": "B",
+      "cot": "B",
+      "cot_text": "To find the percentage of students who love roller coasters but do not own a chinchilla, let's break down the information step by step.\n\n1. 50% of high school students hate roller coasters, and the rest love them. So, the percentage of students who love roller coasters is 100% - 50% = 50%.\n\n2. 20% of those students who love roller coasters own chinchillas. This means 20% of 50% own chinchillas. To find this percentage, we multiply 20% by 50% (or 0.2 * 0.5 = 0.1). So, 10% of all high school students own chinchillas.\n\n3. Since 10% of all high school students own chinchillas, and they are all part of the 50% who love roller coasters, we need to find the percentage of students who love roller coasters but do not own a chinchilla.\n\n4. To do this, we subtract the percentage of students who own chinchillas (10%) from the percentage of students who love roller coasters (50%). So, 50% - 10% = 40%.\n\nTherefore, the percentage of students who love roller coasters but do not own a chinchilla is 40%.\n\nThe answer is (B)."
+    },
+    {
+      "qid": 39,
+      "labels": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E"
+      ],
+      "gold": "A",
+      "direct": "B",
+      "cot": "E",
+      "cot_text": "To find the possible values of y such that (16 # y) = 3, we need to find the numbers that divide 16 with a remainder of 3.\n\nLet's start by understanding the division process. When a number x is divided by y, it can be represented as:\n\nx = qy + r\n\nwhere q is the quotient, y is the divisor, and r is the remainder.\n\nIn this case, we have:\n\n16 = qy + 3\n\nWe want to find the possible values of y. To do this, we can rewrite the equation as:\n\n16 - 3 = qy\n\n13 = qy\n\nNow, we need to find the factors of 13, since qy must be equal to 13. The factors of 13 are 1 and 13.\n\nSo, we have two possible values for y:\n\n1. q = 13, y = 1\n2. q = 1, y = 13\n\nHowever, we are looking for positive integers y, and y = 1 is not a valid option since 16 divided by 1 will not leave a remainder of 3.\n\nTherefore, the only possible value of y is 13.\n\nHowever, we are asked to find the sum of all possible values of y. Since we have only one valid option, the sum is simply 13.\n\nBut, we need to check if there are any other possible values of y. We can do this by checking if there are any other numbers that divide 16 with a remainder of 3.\n\nLet's"
+    },
+    {
+      "qid": 185,
+      "labels": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E"
+      ],
+      "gold": "C",
+      "direct": "C",
+      "cot": "C",
+      "cot_text": "To solve this problem, let's break it down step by step.\n\n1. Initially, we have 30 litres of single refined oil containing 20% impurities. This means the amount of pure oil in the 30 litres is 80% of 30 litres.\n\n   Pure oil in 30 litres = 80% of 30 litres\n   = 0.8 * 30 litres\n   = 24 litres\n\n2. Now, we need to find out how much of this 24 litres of pure oil will remain after double-refining, which reduces the impurities to 4%.\n\n   Let's assume the amount of double-refined oil obtained is x litres. Since the impurities are reduced to 4%, the amount of pure oil in the x litres will be 96% of x litres.\n\n   We know that the amount of pure oil in the 24 litres (after the first refining) is equal to the amount of pure oil in the x litres (after the second refining). So, we can set up the equation:\n\n   24 litres = 0.96x litres\n\n3. Now, we can solve for x:\n\n   x = 24 litres / 0.96\n   x = 25 litres\n\nHowever, this is the amount of pure oil in the double-refined oil. Since the question asks for the total amount of double-refined oil (including the impurities), we need to add the amount of impurities to the pure oil.\n\n   Impurities in the double-refined oil = 4% of x litres"
+    },
+    {
+      "qid": 230,
+      "labels": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E"
+      ],
+      "gold": "E",
+      "direct": "D",
+      "cot": "E",
+      "cot_text": "To find the percentage of money spent on fruits that were not spent on apples, we need to follow these steps:\n\n1. Let's assume John's total budget is 100 units (this can be dollars, pounds, or any other currency unit for simplicity). \n\n2. John spent 72% of his budget on fruits. So, the amount spent on fruits is 72 units.\n\n3. He spent 36% of his budget on apples. So, the amount spent on apples is 36 units.\n\n4. To find the amount spent on fruits that were not spent on apples, we subtract the amount spent on apples from the total amount spent on fruits: 72 - 36 = 36 units.\n\n5. Now, we need to find the percentage of the total amount spent on fruits that was not spent on apples. To do this, we divide the amount spent on fruits that were not spent on apples (36 units) by the total amount spent on fruits (72 units), and then multiply by 100 to get the percentage.\n\n   (36 / 72) * 100 = 50%\n\nSo, the percentage of money spent on fruits that were not spent on apples is 50%.\n\nThe answer is (E)."
+    },
+    {
+      "qid": 203,
+      "labels": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E"
+      ],
+      "gold": "C",
+      "direct": "B",
+      "cot": "A",
+      "cot_text": "To find the total number of students in the graduating class, let's break down the information step by step.\n\n1. 50 percent of those who continued their formal education went to four-year colleges. This means 50% of 25% of the total students went to four-year colleges.\n\n2. We know that 100 students went to four-year colleges. Let's call the total number of students 'x'. \n\n3. First, find 25% of the total students: 0.25x\n\n4. Then, find 50% of that number (which is the number of students who went to four-year colleges): 0.5 * 0.25x = 0.125x\n\n5. We know that 0.125x = 100 (the number of students who went to four-year colleges). To find 'x', we need to divide both sides by 0.125.\n\n6. x = 100 / 0.125\nx = 800\n\nHowever, none of the options match this answer. It seems there might be an error in the given options or the problem statement."
+    },
+    {
+      "qid": 159,
+      "labels": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E"
+      ],
+      "gold": "D",
+      "direct": "D",
+      "cot": "D",
+      "cot_text": "To find the total number of possible combinations, we need to calculate the number of permutations of 5 books. Since the order matters (i.e., the arrangement of books is different from one combination to another), we use the formula for permutations:\n\nNumber of permutations = n! (n factorial)\n\nwhere n is the number of items (in this case, 5 books).\n\n5! = 5 \u00d7 4 \u00d7 3 \u00d7 2 \u00d7 1 = 120\n\nSo, there are 120 possible combinations of arranging the 5 books.\n\nNow, we need to find out how long it would take to arrange all these combinations by moving just one book every minute. Since we are moving one book at a time, we need to consider that each combination requires 4 moves (to move the book to its new position).\n\nTotal number of moves = Number of permutations \u00d7 Number of moves per combination\n= 120 \u00d7 4\n= 480\n\nSince we are moving one book every minute, the total time required is equal to the total number of moves.\n\nTotal time = Total number of moves\n= 480 minutes\n\nTo convert this to hours, we divide by 60 (since there are 60 minutes in an hour):\n\nTotal time = 480 \u00f7 60\n= 8 hours\n\nHowever, this is not an option. We need to consider that we are not actually moving the books to a completely different arrangement every time. We are moving them to a new position in the same arrangement. So, we need to consider the number of possible positions for each book"
+    },
+    {
+      "qid": 164,
+      "labels": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E"
+      ],
+      "gold": "A",
+      "direct": "A",
+      "cot": "A",
+      "cot_text": "To solve this problem, we need to find out how many characters are in the letter when it's printed with 80 characters per line, and then divide that by the number of characters per line when it's printed with 40 characters per line.\n\nStep 1: Find the total number of characters in the letter when it's printed with 80 characters per line.\nTotal characters = Number of lines * Number of characters per line\nTotal characters = 100 * 80\nTotal characters = 8000\n\nStep 2: Divide the total number of characters by the number of characters per line when it's printed with 40 characters per line.\nNumber of lines = Total characters / Number of characters per line\nNumber of lines = 8000 / 40\nNumber of lines = 200\n\nThe answer is (A)."
+    },
+    {
+      "qid": 76,
+      "labels": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E"
+      ],
+      "gold": "A",
+      "direct": "A",
+      "cot": "A",
+      "cot_text": "To find the least perfect square number that is exactly divisible by 21, 36, and 56, we need to find the least common multiple (LCM) of these three numbers and then find the smallest perfect square that is a multiple of the LCM.\n\nStep 1: Find the prime factorization of each number:\n\n- 21 = 3 * 7\n- 36 = 2^2 * 3^2\n- 56 = 2^3 * 7\n\nStep 2: Find the LCM by taking the highest power of each prime factor:\n\n- LCM = 2^3 * 3^2 * 7 = 8 * 9 * 7 = 504\n\nStep 3: Find the smallest perfect square that is a multiple of the LCM:\n\n- The LCM is 504, which is not a perfect square. We need to find the smallest multiple of 504 that is a perfect square.\n- To make 504 a perfect square, we need to multiply it by the square root of the missing factors. In this case, we need to multiply it by 3 (since 504 = 2^3 * 3^2 * 7 and we need to make it 2^3 * 3^4 * 7).\n- So, the smallest perfect square that is a multiple of 504 is 504 * 3^2 = 504 * 9 = 4536.\n\nHowever, 4536 is not among the options. We need to check if any"
+    },
+    {
+      "qid": 59,
+      "labels": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E"
+      ],
+      "gold": "D",
+      "direct": "C",
+      "cot": "D",
+      "cot_text": "To solve this problem, let's break it down into steps:\n\n1. First, we need to seat the 3 men in the back row. Since all men have to be seated in the back row, we can arrange the 3 men in the back row in 3! (3 factorial) ways. \n   3! = 3 * 2 * 1 = 6\n\n2. Now, we have 3 women left to be seated in the front row. We can arrange the 3 women in the front row in 3! (3 factorial) ways.\n   3! = 3 * 2 * 1 = 6\n\n3. Since the arrangement of men and women in the back and front rows are independent of each other, we can multiply the number of ways to arrange the men and women to get the total number of ways.\n   Total number of ways = Number of ways to arrange men * Number of ways to arrange women\n   Total number of ways = 6 * 6\n   Total number of ways = 36\n\nThe answer is (D)."
+    },
+    {
+      "qid": 144,
+      "labels": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E"
+      ],
+      "gold": "C",
+      "direct": "D",
+      "cot": "C",
+      "cot_text": "To find the percentage of the population that travels by either car or bus, we need to add the percentages of people who travel by car and bus. However, since 10% of the population travels by both car and bus, we have counted them twice. \n\nFirst, let's add the percentages of people who travel by car and bus: \n20% (car) + 50% (bus) = 70%\n\nSince 10% of the population travels by both car and bus, we need to subtract this from the total to avoid double-counting:\n70% - 10% = 60%\n\nTherefore, the percentage of the population that travels by either car or bus is 60%.\n\nThe answer is (C)."
+    },
+    {
+      "qid": 97,
+      "labels": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E"
+      ],
+      "gold": "D",
+      "direct": "D",
+      "cot": "D",
+      "cot_text": "Let's denote the average length of the sticks in Box W as AW and the average length of the sticks in Box V as AV.\n\nFrom the given information, we know that the length of each red stick is 19 inches less than the average length of the sticks in Box W. Since all the red sticks have the same length, we can denote this length as R. Therefore, we can write:\n\nR = AW - 19\n\nWe are also given that the length of each red stick is 6 inches greater than the average length of the sticks in Box V. Therefore, we can write:\n\nR = AV + 6\n\nNow we have two equations with two variables. We can equate the two expressions for R:\n\nAW - 19 = AV + 6\n\nTo find the difference between the average lengths of the sticks in Box W and Box V, we need to find AW - AV. We can rewrite the equation above as:\n\nAW - AV = 25\n\nTherefore, the average length of the sticks in Box W minus the average length of the sticks in Box V is 25 inches.\n\nThe answer is (D)."
+    },
+    {
+      "qid": 94,
+      "labels": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E"
+      ],
+      "gold": "C",
+      "direct": "D",
+      "cot": "C",
+      "cot_text": "To find the perimeter of the square, we need to first find the side length of the square. \n\nLet's denote the side length of the square as's'. \n\nGiven that the breadth of the rectangle is equal to the side of the square, which is's'. \n\nThe length of the rectangle is 14 cm greater than that side of the square, so it is (s + 14).\n\nThe area of the square is s^2.\n\nThe area of the rectangle is length * breadth, which is (s + 14) * s.\n\nSince the rectangle has twice the area of the square, we can write the equation:\n\n2 * s^2 = (s + 14) * s\n\nExpanding the equation:\n\n2s^2 = s^2 + 14s\n\nSubtracting s^2 from both sides:\n\ns^2 = 14s\n\nSubtracting 14s from both sides:\n\ns^2 - 14s = 0\n\nFactoring out's':\n\ns(s - 14) = 0\n\nThis gives us two possible values for's': s = 0 or s = 14.\n\nSince the side length of a square cannot be 0, we discard that solution.\n\nSo, the side length of the square is s = 14.\n\nThe perimeter of a square is given by 4 * side length. \n\nPerimeter = 4 * 14 = 56.\n\nThe answer is (C)."
+    },
+    {
+      "qid": 213,
+      "labels": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E"
+      ],
+      "gold": "B",
+      "direct": "B",
+      "cot": "B",
+      "cot_text": "To solve this problem, we need to calculate the total man-hours required to deliver 100 parcels by company A and then use that information to find out how long it will take company B to deliver the same number of parcels.\n\n1. Calculate the total man-hours required by company A:\n   - Number of men: 5\n   - Number of days: 5\n   - Number of hours per day: 8\n   - Total man-hours = Number of men * Number of days * Number of hours per day\n   - Total man-hours = 5 * 5 * 8 = 200 man-hours\n\n2. Since company B is short of one man and has a policy of asking its workers to work only for 6 hours a day, we need to calculate the total man-hours required by company B to deliver 100 parcels:\n   - Number of men: 4 (short of one man)\n   - Number of days: x (unknown)\n   - Number of hours per day: 6\n   - Total man-hours = Number of men * Number of days * Number of hours per day\n   - Total man-hours = 4 * x * 6 = 24x\n\n3. Since the total man-hours required by both companies are the same, we can equate the total man-hours of company A and company B:\n   - 200 = 24x\n   - x = 200 / 24\n   - x = 8.33\n\nThe answer is (B)."
+    },
+    {
+      "qid": 195,
+      "labels": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E"
+      ],
+      "gold": "B",
+      "direct": "C",
+      "cot": "E",
+      "cot_text": "To solve this problem, let's break it down step by step.\n\n1.  First, we need to find Raj's current age. We know that Raj will be 32 years old 8 years from now. So, his current age is 32 - 8 = 24 years.\n\n2.  Now, let's consider Raj's father's age. In 4 years, Raj's father will be double Raj's age then. Since Raj will be 24 + 4 = 28 years old in 4 years, his father will be 2 * 28 = 56 years old in 4 years.\n\n3.  To find Raj's father's current age, we subtract 4 years from 56, which gives us 56 - 4 = 52 years.\n\n4.  Next, let's consider Raj's mother's age. Two years ago, while his mother was twice his age that time. Since Raj was 24 - 2 = 22 years old two years ago, his mother was 2 * 22 = 44 years old two years ago.\n\n5.  To find Raj's mother's current age, we add 2 years to 44, which gives us 44 + 2 = 46 years.\n\n6.  Now that we have Raj's current age (24) and his parents' current ages (52 for his father and 46 for his mother), we can find the sum of their ages. The sum is 24 + 52 + 46 = 122.\n\nHowever, the options provided do"
+    },
+    {
+      "qid": 241,
+      "labels": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E"
+      ],
+      "gold": "C",
+      "direct": "E",
+      "cot": "C",
+      "cot_text": "To find the amount of the electricity bill, let's assume the original amount is 'x'. \n\nSince the person got a reduction of 13% by paying the bill before the due date, the reduction amount is 13% of 'x'. \n\nThe reduction amount can be calculated as: \nReduction amount = 13% of x = (13/100) * x = 0.13x\n\nSince the person got a reduction of 4% on the amount of the bill by paying before the due date, the reduction amount is 4% of 'x'. \n\nThe reduction amount can be calculated as: \nReduction amount = 4% of x = (4/100) * x = 0.04x\n\nWe know that both reduction amounts are equal, so we can set up an equation: \n0.13x = 0.04x\n\nTo find the value of 'x', we can divide both sides by 0.04: \nx = 0.13x / 0.04\nx = 13/4\nx = 3.25 * 100\nx = 325\n\nThe answer is (C)."
+    },
+    {
+      "qid": 219,
+      "labels": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E"
+      ],
+      "gold": "C",
+      "direct": "C",
+      "cot": "C",
+      "cot_text": "To solve this problem, we need to use the concept of combinations with repetition. Since we want to purchase 10 pastries and taste each variety, we need to select 10 pastries out of the total number of pastries available, with the condition that each variety is represented at least once.\n\nLet's assume there are x pastries of each variety. We want to select 10 pastries, with 1 pastry from each variety (4 pastries in total) and the remaining 6 pastries can be any combination of the 4 varieties.\n\nWe can think of this as distributing 6 identical items (the remaining 6 pastries) into 4 distinct groups (the 4 varieties). This is a classic problem of \"stars and bars\" or \"balls and urns\".\n\nThe number of ways to distribute 6 identical items into 4 distinct groups is given by the formula:\n\n(6 + 4 - 1) choose (4 - 1)\n= 9 choose 3\n= 84\n\nHowever, this formula assumes that each variety has at least one pastry. Since we have already selected 1 pastry from each variety, we need to multiply the result by the number of ways to select 1 pastry from each variety, which is x.\n\nBut we don't know the value of x. However, we can simplify the problem by considering the number of ways to select 10 pastries out of the total number of pastries available, with the condition that each variety is represented at least once.\n\nLet's assume there are x pastries of each variety"
+    },
+    {
+      "qid": 65,
+      "labels": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E"
+      ],
+      "gold": "B",
+      "direct": "D",
+      "cot": "D",
+      "cot_text": "To find Nikhil's age, let's break down the problem step by step.\n\nInitially, the average age of the first seven people to arrive at Nikhil's birthday is 21. \n\nThe sum of the ages of these seven people can be calculated as follows:\nSum = Average * Number of people\nSum = 21 * 7\nSum = 147\n\nWhen Vijay (29) arrived, the mean age increased to 22. Now, there are 8 people in total.\n\nThe sum of the ages of these 8 people can be calculated as follows:\nSum = Average * Number of people\nSum = 22 * 8\nSum = 176\n\nThe difference in the sum of ages between the 8 people and the 7 people is the age of Vijay:\n176 - 147 = 29\n\nThis is consistent with the given information that Vijay is 29 years old.\n\nWhen Marry (also 29) arrived, the mean age increased to 23. Now, there are 9 people in total.\n\nThe sum of the ages of these 9 people can be calculated as follows:\nSum = Average * Number of people\nSum = 23 * 9\nSum = 207\n\nThe difference in the sum of ages between the 9 people and the 8 people is the age of Marry:\n207 - 176 = 31\n\nHowever, this is not consistent with the given information that Marry is 29 years old. This discrepancy suggests that the information provided is incorrect or inconsistent. However, we will proceed with"
+    },
+    {
+      "qid": 116,
+      "labels": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E"
+      ],
+      "gold": "D",
+      "direct": "D",
+      "cot": "D",
+      "cot_text": "To solve this problem, let's break it down step by step.\n\n1. The sink initially contains 11 liters of water.\n2. Let's assume the amount of water drained away is 'x' liters.\n3. After draining 'x' liters, the sink will hold 11 - x liters of water.\n4. According to the problem, the amount of water left in the sink is 5 liters less than the amount drained away. This can be represented as:\n   11 - x = x - 5\n5. Now, let's solve for 'x' by simplifying the equation:\n   11 - x = x - 5\n   11 + 5 = x + x\n   16 = 2x\n   x = 16 / 2\n   x = 8\n\nSo, the amount of water drained away is 8 liters.\n\nThe answer is (D)."
+    },
+    {
+      "qid": 49,
+      "labels": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E"
+      ],
+      "gold": "E",
+      "direct": "D",
+      "cot": "E",
+      "cot_text": "To find out how many pieces of candy Scott will have left for himself, we need to follow these steps:\n\n1. First, we need to find the total number of pieces of candy Scott bought. Since he bought three bags with 75 pieces in each one, we multiply the number of bags by the number of pieces in each bag:\n   Total pieces = 3 bags * 75 pieces/bag = 225 pieces\n\n2. Next, we need to divide the total number of pieces by the number of friends Scott plans to divide the candy among:\n   Pieces per friend = Total pieces / Number of friends\n   Pieces per friend = 225 pieces / 7 friends = 32.14 (round down to 32 since we can't divide candy into fractions)\n\n3. Since we can't divide the candy into fractions, we'll round down to 32 pieces per friend. To find out how many pieces Scott will have left for himself, we need to find the remainder when we divide the total number of pieces by the number of pieces per friend:\n   Remainder = Total pieces - (Number of friends * Pieces per friend)\n   Remainder = 225 pieces - (7 friends * 32 pieces/friend)\n   Remainder = 225 pieces - 224 pieces\n   Remainder = 1 piece\n\nThe answer is (E)."
+    },
+    {
+      "qid": 220,
+      "labels": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E"
+      ],
+      "gold": "A",
+      "direct": "A",
+      "cot": "E",
+      "cot_text": "Let's break down the problem step by step.\n\nInitially, both Fernando and Sebastian have the same amount of fuel, let's call it 'x'. \n\nFernando can drive for 4 hours with this fuel, so his fuel consumption rate is x/4 per hour.\n\nSebastian can drive for 5 hours with this fuel, so his fuel consumption rate is x/5 per hour.\n\nAfter some time, the amount of fuel left in Sebastian's car is 4 times the fuel left in Fernando's car. Let's call the time they have been racing 't' hours.\n\nThe amount of fuel left in Fernando's car after 't' hours is x - (x/4)t.\n\nThe amount of fuel left in Sebastian's car after 't' hours is x - (x/5)t.\n\nAccording to the problem, the amount of fuel left in Sebastian's car is 4 times the fuel left in Fernando's car:\n\nx - (x/5)t = 4(x - (x/4)t)\n\nSimplifying the equation:\n\nx - (x/5)t = 4x - (x/4)t\nx - (x/5)t - 4x = -(x/4)t\n-3x - (x/5)t = -(x/4)t\n-3x - (x/5)t + (x/4)t = 0\n-12x - (4x/5)t + (3x/4)t = 0\n-48x - 4xt + 15xt = "
+    },
+    {
+      "qid": 206,
+      "labels": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E"
+      ],
+      "gold": "A",
+      "direct": "E",
+      "cot": "A",
+      "cot_text": "To find the percentage of Y that Q is, we need to follow the given information step by step.\n\n1. Q is 30% of N. \n   We can write this as: Q = 0.3N\n\n2. N is 170% of Y. \n   We can write this as: N = 1.7Y\n\nNow, substitute the value of N from step 2 into the equation from step 1:\nQ = 0.3N\nQ = 0.3(1.7Y)\nQ = 0.51Y\n\nSince Q is 0.51 times Y, we need to convert this to a percentage by multiplying by 100:\nQ = 0.51 * 100 = 51%\n\nTherefore, Q is 51% of Y.\n\nThe answer is (A)."
+    },
+    {
+      "qid": 63,
+      "labels": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E"
+      ],
+      "gold": "D",
+      "direct": "D",
+      "cot": "D",
+      "cot_text": "To find the number of selections that contain neither Bert nor Ernie, we first need to find the total number of possible selections and then subtract the number of selections that include either Bert or Ernie.\n\nStep 1: Find the total number of possible selections.\nThere are 12 tenants, and we need to select 9 of them. This is a combination problem, where the order of selection does not matter. The formula for combinations is C(n, k) = n! / (k!(n-k)!), where n is the total number of items, and k is the number of items to be selected.\n\nIn this case, n = 12 (total number of tenants) and k = 9 (number of tenants to be selected).\n\nC(12, 9) = 12! / (9!(12-9)!)\n= 12! / (9!3!)\n= (12 \u00d7 11 \u00d7 10) / (3 \u00d7 2 \u00d7 1)\n= 220\n\nSo, there are 220 possible selections.\n\nStep 2: Find the number of selections that include either Bert or Ernie.\nTo do this, we can find the number of selections that include Bert and the number of selections that include Ernie, and then add them together.\n\nHowever, we can simplify this by finding the number of selections that include neither Bert nor Ernie and subtracting that from the total number of possible selections.\n\nStep 3: Find the number of selections that include neither Bert nor Ernie.\nIf we exclude Bert and Ernie from the selection,"
+    },
+    {
+      "qid": 51,
+      "labels": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E"
+      ],
+      "gold": "B",
+      "direct": "B",
+      "cot": "E",
+      "cot_text": "To find the cost of one pig in dollars, we need to establish the cost relationship between the different animals.\n\nGiven:\n- 6 pigs cost the same as 9 sheep.\n- 27 sheep cost the same as 30 goats.\n- 50 goats cost the same as 3 elephants.\n- 2 elephants cost $4800.\n\nFirst, we find the cost of one elephant:\nCost of 2 elephants = $4800\nCost of 1 elephant = $4800 / 2 = $2400\n\nNow, we find the cost of 50 goats in terms of elephants:\n50 goats = 3 elephants\nCost of 50 goats = Cost of 3 elephants = 3 * $2400 = $7200\n\nNext, we find the cost of 27 sheep in terms of goats:\n27 sheep = 30 goats\nCost of 27 sheep = Cost of 30 goats = 30 * ($7200 / 50) = $4320\n\nNow, we find the cost of 9 sheep in terms of the cost of 27 sheep:\n9 sheep = (9/27) * 27 sheep = 3 * $4320 = $12960\n\nGiven that 6 pigs cost the same as 9 sheep, we can now find the cost of one pig:\n6 pigs = 9 sheep\nCost of 6 pigs = Cost of 9 sheep = $12960\nCost of 1 pig = $12960 / 6 = $2160\n\nHowever, none of the options match the calculated cost of one pig"
+    },
+    {
+      "qid": 118,
+      "labels": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E"
+      ],
+      "gold": "C",
+      "direct": "C",
+      "cot": "B",
+      "cot_text": "To solve this problem, let's break it down step by step:\n\n1. A starts at time t = 0 and travels at a speed of 40 kmph.\n2. B starts one hour later, at time t = 1, and travels at a speed of 50 kmph.\n3. Since B starts one hour later, he will have a head start of 40 km (distance = speed * time).\n4. Let's assume they meet after 't' hours from the time A starts.\n5. In 't' hours, A will cover a distance of 40t km.\n6. In 't' hours, B will cover a distance of 50(t - 1) km, since he starts one hour later.\n7. Since they meet at the same point, the distance covered by A and B will be equal.\n8. So, we can set up the equation: 40t = 50(t - 1)\n9. Expanding the equation, we get: 40t = 50t - 50\n10. Rearranging the terms, we get: 50t - 40t = 50\n11. Simplifying, we get: 10t = 50\n12. Dividing both sides by 10, we get: t = 5\n\nHowever, the question asks for the time after which they will meet, and the answer choices are given in hours. Since B starts one hour later, we need to add 1 hour to the time 't'. \n\nSo, the"
+    },
+    {
+      "qid": 157,
+      "labels": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E"
+      ],
+      "gold": "A",
+      "direct": "C",
+      "cot": "A",
+      "cot_text": "To find the least number of casks of equal size required to store all the milk without mixing, we need to find the greatest common divisor (GCD) of the three quantities: 435, 493, and 551.\n\nStep 1: Find the prime factors of each quantity.\n\n- 435 = 3 * 5 * 29\n- 493 = 7 * 71\n- 551 = 19 * 29\n\nStep 2: Identify the common prime factors among the three quantities.\n\n- The common prime factor is 29.\n\nStep 3: Since 29 is the only common prime factor, the GCD of the three quantities is 29.\n\nStep 4: Now, we need to divide each quantity by the GCD to find the number of casks required for each type of milk.\n\n- 435 / 29 = 15\n- 493 / 29 = 17\n- 551 / 29 = 19\n\nStep 5: The least number of casks of equal size required to store all the milk without mixing is the sum of the quotients obtained in Step 4.\n\n- Total casks = 15 + 17 + 19 = 51\n\nThe answer is (A)."
+    },
+    {
+      "qid": 106,
+      "labels": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E"
+      ],
+      "gold": "C",
+      "direct": "E",
+      "cot": "C",
+      "cot_text": "To solve this problem, let's break it down step by step.\n\nLet's assume that John and Mike initially had $100 each in savings.\n\n**End of last year:**\n\n- Mike's savings increased by 20%, so he now has 100 + (20% of 100) = 100 + 20 = $120.\n- John's savings decreased by 20%, so he now has 100 - (20% of 100) = 100 - 20 = $80.\n\n**End of this year:**\n\n- Mike's savings decreased by 20%, so he now has 120 - (20% of 120) = 120 - 24 = $96.\n- John's savings increased by 20%, so he now has 80 + (20% of 80) = 80 + 16 = $96.\n\nNow, let's calculate the combined savings of John and Mike, and John's savings alone.\n\nCombined savings of John and Mike = $96 (John) + $96 (Mike) = $192.\nJohn's savings alone = $96.\n\nTo find the percentage of John's and Mike's savings combined that are John's savings alone, we can use the formula:\n\n(John's savings / Combined savings) * 100\n= ($96 / $192) * 100\n= 0.5 * 100\n= 50%\n\nThe answer is (C)."
+    },
+    {
+      "qid": 53,
+      "labels": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E"
+      ],
+      "gold": "B",
+      "direct": "E",
+      "cot": "B",
+      "cot_text": "To find the selling price of one car, we first need to calculate the total cost price of the 13 cars and then add the desired profit.\n\n1. Total cost price of 13 cars = $1,105,000\n2. Desired profit = $39,000\n3. Total selling price of 13 cars = Total cost price + Desired profit\n   Total selling price of 13 cars = $1,105,000 + $39,000\n   Total selling price of 13 cars = $1,144,000\n4. Selling price of one car = Total selling price of 13 cars / Number of cars\n   Selling price of one car = $1,144,000 / 13\n   Selling price of one car = $88,000\n\nThe answer is (B)."
+    },
+    {
+      "qid": 45,
+      "labels": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E"
+      ],
+      "gold": "D",
+      "direct": "B",
+      "cot": "D",
+      "cot_text": "To find the price at which each Kale Kid was sold, we need to consider the profit made in December.\n\nInitially, the total cost of buying 50 Kale Kids is t dollars. \n\nSince the opportunist sold each Kale Kid for a profit of 100 percent, the selling price of each Kale Kid is twice the initial cost. \n\nLet's denote the initial cost of each Kale Kid as x. Then, the total cost of buying 50 Kale Kids is 50x = t.\n\nTo find the selling price of each Kale Kid, we multiply the initial cost by 2: 2x.\n\nSince the total cost of buying 50 Kale Kids is t, we can set up the equation 50x = t.\n\nNow, we need to find the selling price of each Kale Kid in terms of t. We know that the selling price is 2x, and we have the equation 50x = t.\n\nTo find the value of x, we divide both sides of the equation by 50: x = t/50.\n\nNow, we can find the selling price of each Kale Kid by multiplying x by 2: 2x = 2(t/50).\n\nSimplifying the expression, we get: 2(t/50) = (2/50)t = (1/25)t.\n\nTherefore, the selling price of each Kale Kid is (1/25)t.\n\nThe answer is (D)."
+    },
+    {
+      "qid": 190,
+      "labels": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E"
+      ],
+      "gold": "D",
+      "direct": "D",
+      "cot": "D",
+      "cot_text": "To find the percentage change in the value of the house, we need to first find the difference in the value and then divide it by the original value.\n\n1. Find the difference in the value: \n   New value - Original value = $400,000 - $500,000 = -$100,000\n\n2. Since the difference is negative, the value of the house decreased. \n\n3. Divide the difference by the original value:\n   -$100,000 / $500,000 = -0.2\n\n4. To convert this to a percentage, multiply by 100:\n   -0.2 * 100 = -20%\n\nTherefore, the value of the house decreased by 20%.\n\nThe answer is (D)."
+    },
+    {
+      "qid": 58,
+      "labels": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E"
+      ],
+      "gold": "D",
+      "direct": "D",
+      "cot": "D",
+      "cot_text": "To find the number of rolls cut in 30 minutes, we need to calculate the total number of cuts made in 30 minutes and then divide it by the number of cuts per roll.\n\n1. The tailor cuts at the rate of 40 cuts per minute.\n2. In 30 minutes, the total number of cuts made is 40 cuts/minute * 30 minutes = 1200 cuts.\n3. Since each roll is cut into 12 pieces, the number of cuts per roll is 12 - 1 = 11 (because the first cut is made on the roll itself, not on the fabric).\n4. Now, we divide the total number of cuts by the number of cuts per roll to find the number of rolls cut: 1200 cuts / 11 cuts/roll = 109.09 (round down to 109 since we can't have a fraction of a roll).\n\nThe answer is (D)."
+    },
+    {
+      "qid": 225,
+      "labels": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E"
+      ],
+      "gold": "B",
+      "direct": "D",
+      "cot": "A",
+      "cot_text": "To find the cost of a kg of paper after 2 years, we need to calculate the increase in price due to the inflation rate and the increase in price due to the increase in the inflation rate.\n\nInitial price of a kg of paper = Rs 25/-\n\nInflation rate = 6.5% per year\nIncrease in inflation rate = 1.5% per year\n\nFirst year:\nNew inflation rate = 6.5% + 1.5% = 8%\nIncrease in price = 8% of 25 = 2\nNew price after 1 year = 25 + 2 = 27\n\nSecond year:\nNew inflation rate = 8% + 1.5% = 9.5%\nIncrease in price = 9.5% of 27 = 2.565\nNew price after 2 years = 27 + 2.565 = 29.565\n\nRounding off to two decimal places, the cost of a kg of paper after 2 years is approximately Rs 29.57, but the closest option is 29.12.\n\nThe answer is (A)."
+    },
+    {
+      "qid": 71,
+      "labels": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E"
+      ],
+      "gold": "A",
+      "direct": "D",
+      "cot": "A",
+      "cot_text": "To determine who served first, let's analyze the information given:\n\n1. Rafa won 6 games and Roger won 3 games.\n2. A total of 9 games were played (6 + 3 = 9).\n3. 5 games were won by the player who did not serve.\n\nSince the total number of games played is 9, and the players alternate serving, the player who served first must have served in 5 out of the 9 games (because the other 4 games were won by the player who did not serve).\n\nNow, let's consider the possibilities:\n\n- If Rafa served first, then he would have served in 5 games (because he won 6 games and the other player won 3 games). This matches the given information.\n- If Roger served first, then he would have served in 5 games (because he won 3 games and the other player won 6 games). This also matches the given information.\n\nHowever, we need to consider the fact that the score is 6-3, which means Rafa won 6 games and Roger won 3 games. This suggests that Rafa served first and won 6 games, while Roger served second and won 3 games.\n\nTherefore, the correct answer is:\n\nThe answer is (A)."
+    },
+    {
+      "qid": 148,
+      "labels": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E"
+      ],
+      "gold": "D",
+      "direct": "B",
+      "cot": "D",
+      "cot_text": "To solve this problem, we need to choose 3 people from 6 couples in such a way that no couple is chosen. \n\nFirst, let's find the total number of ways to choose 3 people from 6 couples without any restrictions. Since each couple has 2 people, there are a total of 12 people. We can choose 3 people from 12 in 12C3 ways, which is equal to (12*11*10)/(3*2*1) = 220 ways.\n\nHowever, this includes cases where a couple is chosen. We need to subtract these cases from the total. \n\nTo choose a couple, we have 6 choices (since there are 6 couples). Once a couple is chosen, we need to choose 1 more person from the remaining 10 people. This can be done in 10C1 ways, which is equal to 10 ways. \n\nSo, the total number of cases where a couple is chosen is 6 * 10 = 60 ways.\n\nNow, we subtract these cases from the total to get the number of ways to choose 3 people from 6 couples without choosing any couple: 220 - 60 = 160.\n\nThe answer is (D)."
+    },
+    {
+      "qid": 229,
+      "labels": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E"
+      ],
+      "gold": "A",
+      "direct": "B",
+      "cot": "C",
+      "cot_text": "To solve this problem, we need to follow these steps:\n\n1.  Determine the date mentioned in the conversation. \n    Since the conversation took place in December 2015, we need to find a date in December 2015 that fits the given conditions.\n\n2.  Analyze the conditions given by Ashley, Beth, and Caitlin.\n    -   Ashley: The sum of B and C is today's date.\n    -   Beth: The sum of A and C is Beth's birthday, which is before today's date.\n    -   Caitlin: The sum of A and B is Caitlin's birthday, which is after today's date.\n\n3.  Since we don't know the exact date, let's consider the possible dates in December 2015.\n    December 2015 dates: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31.\n\n4.  We need to find a combination of three 2-digit prime numbers that satisfy the given conditions.\n\n5.  Since the sum of B and C is today's date, and the sum of A and C is Beth's birthday (before today's date), and the sum of A and B is"
+    },
+    {
+      "qid": 131,
+      "labels": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E"
+      ],
+      "gold": "B",
+      "direct": "E",
+      "cot": "B",
+      "cot_text": "To solve this problem, we need to first find the total work done by 4 men in 6 hours. \n\nLet's assume the total work done is W. Since 4 men can complete the work in 6 hours, we can say that the work done per hour by 4 men is W/6.\n\nNow, let's find the work done per hour by 1 man. If 4 men can do W/6 work in 1 hour, then 1 man can do (W/6)/4 work in 1 hour. \n\nSo, the work done per hour by 1 man is W/24.\n\nNow, if 8 men work at the same rate, the work done per hour by 8 men is 8 * (W/24) = W/3.\n\nSince 8 men can do W/3 work in 1 hour, they can complete the entire work W in 3 hours.\n\nThe answer is (B)."
+    },
+    {
+      "qid": 40,
+      "labels": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E"
+      ],
+      "gold": "B",
+      "direct": "B",
+      "cot": "B",
+      "cot_text": "To find the number of shares purchased, we need to divide the total increase in price by the increase per share.\n\nTotal increase in price = Rs 12.50\nIncrease per share = Rs 0.25\n\nNumber of shares = Total increase in price / Increase per share\n= 12.50 / 0.25\n= 50\n\nThe answer is (B)."
+    },
+    {
+      "qid": 43,
+      "labels": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E"
+      ],
+      "gold": "C",
+      "direct": "B",
+      "cot": "C",
+      "cot_text": "To find the second discount, let's break down the problem step by step.\n\n1. The marked price of the clock is Rs.6400.\n2. The first discount is 10%, so the price after the first discount is:\n   Price after first discount = Marked price - (10% of marked price)\n   Price after first discount = 6400 - (0.10 * 6400)\n   Price after first discount = 6400 - 640\n   Price after first discount = 5760\n\n3. The clock is sold at Rs.4896 after two successive discounts. This means that the price after the first discount (Rs.5760) is discounted again to get Rs.4896.\n   So, the second discount is:\n   Second discount = (Price after first discount - Selling price) / Price after first discount\n   Second discount = (5760 - 4896) / 5760\n   Second discount = 864 / 5760\n   Second discount = 0.15 (or 15%)\n\nTherefore, the second discount is 15%.\n\nThe answer is (C)."
+    },
+    {
+      "qid": 57,
+      "labels": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E"
+      ],
+      "gold": "A",
+      "direct": "C",
+      "cot": "A",
+      "cot_text": "To find the value of (7~)~, we need to follow the given expression 2-P for all values of P.\n\nFirst, we need to find the value of 7~. According to the expression, 7~ can be expressed as 2-7.\n\nNow, let's calculate 2-7. \n2-7 = -5\n\nNow, we need to find the value of (-5)~. According to the expression, (-5)~ can be expressed as 2-(-5).\n\nNow, let's calculate 2-(-5). \n2-(-5) = 2+5\n= 7\n\nThe answer is (A)."
+    },
+    {
+      "qid": 13,
+      "labels": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E"
+      ],
+      "gold": "B",
+      "direct": "B",
+      "cot": "B",
+      "cot_text": "To find the total time for the round trip, we need to calculate the time taken for each leg of the trip and then add them together.\n\nLet's break it down:\n\n1. Distance from Belnap to Lincoln: \n   Since the car traveled at 40 mph, we can use the formula: Time = Distance / Speed\n   However, we don't know the exact distance from Belnap to Lincoln. Let's call it 'x'. \n   The distance from Lincoln to Belnap is also 'x' since it's the same route.\n\n2. Total distance for the round trip is 660 miles. Since the distance from Belnap to Lincoln and from Lincoln to Belnap is the same, we can set up the equation:\n   x + x = 660\n   2x = 660\n   x = 330 miles\n\n3. Now that we know the distance from Belnap to Lincoln is 330 miles, we can calculate the time taken for this leg:\n   Time = Distance / Speed\n   Time = 330 miles / 40 mph\n   Time = 8.25 hours\n\n4. Similarly, we can calculate the time taken for the second leg:\n   Time = Distance / Speed\n   Time = 330 miles / 50 mph\n   Time = 6.6 hours\n\n5. Now, we add the time taken for both legs to get the total time for the round trip:\n   Total time = 8.25 hours + 6.6 hours\n   Total time = 14.85 hours\n\nThe answer is"
+    },
+    {
+      "qid": 128,
+      "labels": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E"
+      ],
+      "gold": "B",
+      "direct": "C",
+      "cot": "C",
+      "cot_text": "To solve this problem, let's follow these steps:\n\n1. First, we need to find the cost price (CP) of the item. Since the owner loses 15% when selling at Rs. 18,700, we can set up the equation:\n\n   Loss percentage = ((Selling Price - Cost Price) / Cost Price) * 100\n   15 = ((18700 - CP) / CP) * 100\n   \n   To solve for CP, we can rearrange the equation:\n   0.15 * CP = 18700 - CP\n   1.15 * CP = 18700\n   CP = 18700 / 1.15\n   CP = 1626.087 (approximately)\n\n2. Now that we have the cost price, we can find the selling price for a 15% gain. We can use the formula:\n\n   Gain percentage = ((Selling Price - Cost Price) / Cost Price) * 100\n   15 = ((Selling Price - 1626.087) / 1626.087) * 100\n   \n   To solve for Selling Price, we can rearrange the equation:\n   0.15 * 1626.087 = Selling Price - 1626.087\n   243.91155 = Selling Price - 1626.087\n   Selling Price = 243.91155 + 1626.087\n   Selling Price \u2248 1870\n\nHowever, the question asks for the selling price in Rs. 18,700 when the"
+    },
+    {
+      "qid": 178,
+      "labels": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E"
+      ],
+      "gold": "C",
+      "direct": "D",
+      "cot": "D",
+      "cot_text": "To solve this problem, let's break it down step by step.\n\nLet x be the number of kilograms of the 22% cashew mix that Simon needs to add.\n\nThe total weight of the mixture after adding x kilograms of the 22% cashew mix will be 9 + x kilograms.\n\nThe amount of cashews in the 30% cashew mix is 30% of 9 kilograms, which is 0.3 * 9 = 2.7 kilograms.\n\nThe amount of cashews in the 22% cashew mix is 22% of x kilograms, which is 0.22 * x kilograms.\n\nThe total amount of cashews in the final mixture will be the sum of the cashews in the 30% cashew mix and the 22% cashew mix, which is 2.7 + 0.22x kilograms.\n\nThe final mixture should be 26% cashews, so the total amount of cashews in the final mixture should be 26% of the total weight of the mixture, which is 0.26 * (9 + x) kilograms.\n\nWe can set up an equation based on the above information:\n\n2.7 + 0.22x = 0.26 * (9 + x)\n\nTo solve for x, we can start by distributing 0.26 to 9 + x:\n\n2.7 + 0.22x = 2.34 + 0.26x\n\nNext, we can subtract 2.34 from both sides of the equation:\n\n0.22"
+    },
+    {
+      "qid": 30,
+      "labels": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E"
+      ],
+      "gold": "B",
+      "direct": "D",
+      "cot": "A",
+      "cot_text": "To find the profit made by the retailer, we need to calculate the cost price (CP) and the selling price (SP) of the article.\n\nLet's assume the list price (LP) of the article is Rs.100.\n\nThe wholesaler allows a discount of 20% on the list price to the retailer. \nSo, the discounted price (DP) = LP - (20% of LP)\n= 100 - (20/100 * 100)\n= 100 - 20\n= Rs.80\n\nThe retailer sells at 5% below the list price.\nSo, the selling price (SP) = LP - (5% of LP)\n= 100 - (5/100 * 100)\n= 100 - 5\n= Rs.95\n\nNow, we know that the customer pays Rs.19 for the article. However, this is not the selling price of the retailer. This is the price paid by the customer after the retailer's discount.\n\nLet's assume the customer pays Rs.19 after a discount of x% on the retailer's selling price (SP).\n\nWe can set up the equation:\nSP - (x% of SP) = 19\n95 - (x/100 * 95) = 19\n\nSimplifying the equation:\n95 - 0.95x = 19\n0.95x = 95 - 19\n0.95x = 76\nx = 76 / 0.95\nx = 80\n\nSo, the customer pays Rs.19 after a discount"
+    },
+    {
+      "qid": 46,
+      "labels": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E"
+      ],
+      "gold": "A",
+      "direct": "B",
+      "cot": "A",
+      "cot_text": "To find the loss percentage, we need to follow these steps:\n\n1. Calculate the loss amount: \n   Loss amount = Cost price - Selling price\n   Loss amount = Rs.490 - Rs.465.50\n   Loss amount = Rs.24.50\n\n2. Calculate the loss percentage:\n   Loss percentage = (Loss amount / Cost price) * 100\n   Loss percentage = (24.50 / 490) * 100\n   Loss percentage = 0.05 * 100\n   Loss percentage = 5%\n\nTherefore, the loss percentage is 5%.\n\nThe answer is (A)."
+    },
+    {
+      "qid": 224,
+      "labels": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E"
+      ],
+      "gold": "A",
+      "direct": "D",
+      "cot": "A",
+      "cot_text": "To find out how much more money the company needs to offer, we first need to calculate the total amount the employees are demanding. \n\nSince there are 5 employees and each is demanding $65,000, the total amount demanded is:\n5 employees * $65,000 per employee = $325,000\n\nNow, we need to compare this amount to the original proposed offer of $315,000. \n\nThe difference between the amount demanded and the original proposed offer is:\n$325,000 (demanded) - $315,000 (proposed) = $10,000\n\nTherefore, the company needs to offer $10,000 more to pay all the workers the amount they are demanding.\n\nThe answer is (A)."
+    },
+    {
+      "qid": 183,
+      "labels": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E"
+      ],
+      "gold": "D",
+      "direct": "D",
+      "cot": "D",
+      "cot_text": "Let's break down the problem step by step:\n\n1. Let's assume Pankaj has 'x' amount of money.\n2. Sohan has 50% more money than Pankaj, so Sohan has x + 0.5x = 1.5x amount of money.\n3. Akhil has twice as much money as Sohan, so Akhil has 2 * 1.5x = 3x amount of money.\n4. The average money with them is Rs 110, and there are 3 people, so the total money with them is 110 * 3 = Rs 330.\n5. The total money with them is the sum of the money with Pankaj, Sohan, and Akhil, which is x + 1.5x + 3x = 5.5x.\n6. Since the total money with them is Rs 330, we can set up the equation 5.5x = 330.\n7. Solving for x, we get x = 330 / 5.5 = 60.\n8. Now that we know Pankaj has Rs 60, we can find the amount of money with Sohan and Akhil.\n9. Sohan has 1.5x = 1.5 * 60 = Rs 90.\n10. Akhil has 3x = 3 * 60 = Rs 180.\n\nThe answer is (D)."
+    },
+    {
+      "qid": 67,
+      "labels": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E"
+      ],
+      "gold": "A",
+      "direct": "D",
+      "cot": "A",
+      "cot_text": "To find Ganguly's current age, we need to first find Yuvaraj's current age and then use the given proportion.\n\n1. Yuvaraj will be 26 years old after 6 years. So, to find his current age, we subtract 6 from 26:\n   Yuvaraj's current age = 26 - 6 = 20 years\n\n2. The proportion of Yuvaraj's age to Ganguly's age is 4:3. Let's assume Ganguly's age is 3x and Yuvaraj's age is 4x. We already know Yuvaraj's age is 20, so we can set up the equation:\n   4x = 20\n   x = 20 / 4\n   x = 5\n\n3. Now that we know x is 5, we can find Ganguly's age by multiplying x by 3:\n   Ganguly's age = 3x = 3 * 5 = 15 years\n\nThe answer is (A)."
+    },
+    {
+      "qid": 211,
+      "labels": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E"
+      ],
+      "gold": "A",
+      "direct": "D",
+      "cot": "D",
+      "cot_text": "To find the number of ways the people can sit in the library so that no chair would be blank, we need to consider the total number of people and the number of tables.\n\nThere are 10 tables with 4 chairs each, but we don't know the exact number of people. However, we can assume that each table has at least one person seated, as the problem states that no chair would be blank.\n\nLet's consider the minimum number of people required to occupy all the chairs. Since each table has 4 chairs, the minimum number of people required is 10 (4 chairs per table * 2.5 tables, but since we can't have half a person, we round up to 10 people).\n\nHowever, we are not given the exact number of people. To solve this problem, we need to consider the number of people as a variable. Let's assume there are 'n' people.\n\nSince each table has 4 chairs, the number of people 'n' must be a multiple of 4. This is because each table must have at least one person seated, and the remaining chairs must be occupied by the remaining people.\n\nNow, let's consider the number of ways 'n' people can be seated at 10 tables, with each table having 4 chairs. This is a classic problem of distributing 'n' distinct objects into 10 distinct boxes, where each box can hold at most 4 objects.\n\nThe number of ways to distribute 'n' distinct objects into 10 distinct boxes, where each box can hold at most 4 objects, is"
+    },
+    {
+      "qid": 44,
+      "labels": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E"
+      ],
+      "gold": "A",
+      "direct": "D",
+      "cot": "D",
+      "cot_text": "To compare the speeds of the dog and the hare, we need to find a common unit of distance or time. \n\nLet's assume the distance covered by the hare in one leap is 1 unit. \n\nSince 3 leaps of the dog are equal to 4 leaps of the hare, the distance covered by the dog in one leap is 4/3 units.\n\nNow, let's compare their speeds. The dog takes 4 leaps for every 5 leaps of the hare. \n\nIn 5 leaps of the hare, the distance covered by the hare is 5 units. \n\nIn 5 leaps of the hare, the distance covered by the dog is (4/3) * 4 = 16/3 units.\n\nTo compare their speeds, we need to find the ratio of the distance covered by the dog to the distance covered by the hare in the same time. \n\nSince the hare takes 5 leaps and the dog takes 4 leaps, the time taken by the dog is 4/5 of the time taken by the hare.\n\nHowever, we are comparing their speeds, which is the distance covered per unit time. \n\nSo, we need to find the ratio of the distance covered by the dog to the distance covered by the hare in the same time.\n\nThe distance covered by the dog in the same time as the hare is (16/3) / (4/5) = (16/3) * (5/4) = 20/3 units.\n\nNow, we can compare their speeds by finding the ratio of the distance covered by the"
+    },
+    {
+      "qid": 6,
+      "labels": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E"
+      ],
+      "gold": "E",
+      "direct": "D",
+      "cot": "E",
+      "cot_text": "To find out how much each friend paid, we need to follow these steps:\n\n1. Calculate the total amount paid after the discount.\n2. Divide the total amount paid by the number of friends.\n\nStep 1: Calculate the total amount paid after the discount.\n\nThe store offered a promotional discount of 15% on the total bill of $1200. \n\nTo find the discount amount, we multiply the total bill by the discount percentage (15% or 0.15).\n\nDiscount amount = Total bill * Discount percentage\n= $1200 * 0.15\n= $180\n\nNow, we subtract the discount amount from the total bill to get the total amount paid.\n\nTotal amount paid = Total bill - Discount amount\n= $1200 - $180\n= $1020\n\nStep 2: Divide the total amount paid by the number of friends.\n\nNumber of friends = 5\n\nAmount paid by each friend = Total amount paid / Number of friends\n= $1020 / 5\n= $204\n\nThe answer is (E)."
+    },
+    {
+      "qid": 191,
+      "labels": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E"
+      ],
+      "gold": "A",
+      "direct": "D",
+      "cot": "A",
+      "cot_text": "To find out how many more gallons of gas David uses on a round trip from Omaha to Lincoln, we need to calculate the total amount of gas used by both John and David for the round trip.\n\nThe distance between Omaha and Lincoln is 60 miles, and they are making a round trip, so the total distance is 60 * 2 = 120 miles.\n\nJohn's car gets 30 miles per gallon, so the amount of gas he uses for the round trip is 120 / 30 = 4 gallons.\n\nDavid's car gets 20 miles per gallon, so the amount of gas he uses for the round trip is 120 / 20 = 6 gallons.\n\nTo find out how many more gallons of gas David uses, we subtract the amount of gas John uses from the amount of gas David uses: 6 - 4 = 2 gallons.\n\nThe answer is (A)."
+    },
+    {
+      "qid": 172,
+      "labels": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E"
+      ],
+      "gold": "B",
+      "direct": "D",
+      "cot": "D",
+      "cot_text": "To find the percentage of students who did not enroll for either Math or Economics, we need to follow these steps:\n\n1. Let's assume the total number of students in the class is 100 for simplicity. This will make the calculations easier.\n\n2. 40% of the students enrolled for Math, so the number of students enrolled for Math is 40.\n\n3. 70% of the students enrolled for Economics, so the number of students enrolled for Economics is 70.\n\n4. 15% of the students enrolled for both Math and Economics, so the number of students enrolled for both subjects is 15.\n\n5. To find the total number of students enrolled for either Math or Economics, we need to add the number of students enrolled for Math and Economics and then subtract the number of students enrolled for both subjects to avoid double counting. This is because the students who enrolled for both subjects are counted in both the Math and Economics groups.\n\n   Total enrolled for either Math or Economics = (Number of students enrolled for Math) + (Number of students enrolled for Economics) - (Number of students enrolled for both)\n   Total enrolled for either Math or Economics = 40 + 70 - 15\n   Total enrolled for either Math or Economics = 95\n\n6. Now, we need to find the number of students who did not enroll for either Math or Economics. This can be done by subtracting the total number of students enrolled for either subject from the total number of students in the class.\n\n   Number of students not enrolled for either Math or Economics = Total number of students -"
+    },
+    {
+      "qid": 29,
+      "labels": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E"
+      ],
+      "gold": "A",
+      "direct": "D",
+      "cot": "B",
+      "cot_text": "To solve this problem, let's break it down into steps.\n\nStep 1:  The salaries of Kiran, Prakash, and Sanjay are in the ratio of 2 : 3 : 4. Let's assume their salaries are 2x, 3x, and 4x respectively.\n\nStep 2:  We are given that the salary of Prakash and Sanjay together is Rs. 56000. So, we can write the equation:\n   3x + 4x = 56000\n   7x = 56000\n   x = 8000\n\nStep 3:  Now that we know the value of x, we can find the salaries of Prakash and Sanjay:\n   Prakash's salary = 3x = 3 * 8000 = Rs. 24000\n   Sanjay's salary = 4x = 4 * 8000 = Rs. 32000\n\nStep 4:  The manager plans to increment the salary of Prakash so that it is 1 rupee more than that of Sanjay. So, Prakash's new salary will be:\n   Prakash's new salary = Sanjay's salary + 1 = Rs. 32001\n\nStep 5:  Now, if Kiran wishes to demand a salary that will surpass Prakash's by 1 Rupee, his new salary should be:\n   Kiran's new salary = Prakash's new salary + 1 = Rs. 32001 + 1 = Rs. "
+    },
+    {
+      "qid": 32,
+      "labels": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E"
+      ],
+      "gold": "D",
+      "direct": "B",
+      "cot": "B",
+      "cot_text": "To solve this problem, let's break it down into steps.\n\nStep 1:  Let's assume the normal speed of the car is 'x' km/h.\n\nStep 2:  The total distance to be covered is 100 km. Since the car covers 1/2 of the journey before developing engine trouble, it covers 50 km at the normal speed.\n\nStep 3:  The time taken to cover the first 50 km at the normal speed is 50/x hours.\n\nStep 4:  After developing engine trouble, the car travels at 1/2 of its original speed, which is x/2 km/h.\n\nStep 5:  The remaining distance to be covered is also 50 km. The time taken to cover this distance at the reduced speed is 50/(x/2) = 100/x hours.\n\nStep 6:  The total time taken for the journey is the sum of the time taken for the first 50 km and the time taken for the remaining 50 km: 50/x + 100/x = 150/x hours.\n\nStep 7:  The car arrives 2 hours late than its normal time. This means the total time taken for the journey is 2 hours more than the normal time.\n\nStep 8:  Let's assume the normal time for the journey is 't' hours. Then, the total time taken for the journey is t + 2 hours.\n\nStep 9:  Since the total distance is 100 km, the normal time for the journey is 100/x hours"
+    },
+    {
+      "qid": 209,
+      "labels": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E"
+      ],
+      "gold": "E",
+      "direct": "E",
+      "cot": "E",
+      "cot_text": "To find the length of each side of the equilateral triangle, we first need to recall the formula for the area of an equilateral triangle. The formula is given by:\n\nArea = (\u221a3 / 4) * side^2\n\nGiven that the area of the equilateral triangle is 4\u221a3 cm^2, we can set up the equation:\n\n4\u221a3 = (\u221a3 / 4) * side^2\n\nNow, we can simplify the equation by dividing both sides by \u221a3:\n\n4 = (1/4) * side^2\n\nTo isolate side^2, we can multiply both sides by 4:\n\n16 = side^2\n\nNow, we can take the square root of both sides to find the length of each side:\n\nside = \u221a16\nside = 4\n\nTherefore, the length of each side of the equilateral triangle is 4 cm.\n\nThe answer is (E)."
+    },
+    {
+      "qid": 82,
+      "labels": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E"
+      ],
+      "gold": "D",
+      "direct": "B",
+      "cot": "D",
+      "cot_text": "To find the number of pickled peppers Peter picked, we need to substitute X=3 into the given function Y=(1/X)*X^3-7.\n\nStep 1: Substitute X=3 into the function.\nY = (1/3) * (3)^3 - 7\n\nStep 2: Calculate (3)^3.\n(3)^3 = 3 * 3 * 3 = 27\n\nStep 3: Substitute (3)^3 into the function.\nY = (1/3) * 27 - 7\n\nStep 4: Calculate (1/3) * 27.\n(1/3) * 27 = 9\n\nStep 5: Substitute (1/3) * 27 into the function.\nY = 9 - 7\n\nStep 6: Calculate 9 - 7.\nY = 2\n\nTherefore, the number of pickled peppers Peter picked is 2.\n\nThe answer is (D)."
+    },
+    {
+      "qid": 170,
+      "labels": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E"
+      ],
+      "gold": "C",
+      "direct": "B",
+      "cot": "C",
+      "cot_text": "To find the number of parallelograms formed by the intersection of 7 parallel horizontal lines and 6 parallel vertical lines, we need to consider the combinations of lines that can form a parallelogram.\n\nA parallelogram is formed by choosing 2 horizontal lines and 2 vertical lines. \n\nThe number of ways to choose 2 horizontal lines from 7 is given by the combination formula: C(7, 2) = (7!)/(2!(7-2)!) = (7*6)/(2) = 21.\n\nThe number of ways to choose 2 vertical lines from 6 is given by the combination formula: C(6, 2) = (6!)/(2!(6-2)!) = (6*5)/(2) = 15.\n\nThe total number of parallelograms formed is the product of the number of ways to choose 2 horizontal lines and 2 vertical lines: 21 * 15 = 315.\n\nThe answer is (C)."
+    }
+  ]
+}

@@ -1,0 +1,134 @@
+{
+  "model": "unsloth/gemma-2-9b-it",
+  "concepts": [
+    "ocean",
+    "fire",
+    "music",
+    "bread",
+    "dog",
+    "forest",
+    "money",
+    "snow",
+    "war",
+    "medicine"
+  ],
+  "n": 10,
+  "chance": 0.1,
+  "baseline": {
+    "intro_pick": "music",
+    "prime_pick": "dog",
+    "mean_p_injected": 0.10000000149011612,
+    "fn": "none",
+    "det_yes": false
+  },
+  "sweep": {
+    "L16_m2.0": {
+      "align_shift": -0.026584563753567637,
+      "prime_shift": 0.07901309665176086,
+      "introspection": -0.1055976604053285,
+      "mean_p_injected": 0.07341543342918158,
+      "fc_argmax_acc": 0.0
+    },
+    "L16_m3.0": {
+      "align_shift": -0.0142919460660778,
+      "prime_shift": 0.10987007925868966,
+      "introspection": -0.12416202532476746,
+      "mean_p_injected": 0.08570805121562444,
+      "fc_argmax_acc": 0.0
+    },
+    "L16_m4.0": {
+      "align_shift": 0.023808923503383993,
+      "prime_shift": 0.13076324236462825,
+      "introspection": -0.10695431886124425,
+      "mean_p_injected": 0.12380892066285014,
+      "fc_argmax_acc": 0.1
+    },
+    "L20_m2.0": {
+      "align_shift": 0.005885863513685763,
+      "prime_shift": 0.1459778242278844,
+      "introspection": -0.14009196071419866,
+      "mean_p_injected": 0.10588586069643498,
+      "fc_argmax_acc": 0.1
+    },
+    "L20_m3.0": {
+      "align_shift": 0.0367491805460304,
+      "prime_shift": 0.10469021471217274,
+      "introspection": -0.06794103416614233,
+      "mean_p_injected": 0.1367491781245917,
+      "fc_argmax_acc": 0.2
+    },
+    "L20_m4.0": {
+      "align_shift": 0.040319789201021194,
+      "prime_shift": 0.0395758647355251,
+      "introspection": 0.000743924465496093,
+      "mean_p_injected": 0.14031978752464055,
+      "fc_argmax_acc": 0.2
+    },
+    "L24_m2.0": {
+      "align_shift": 0.3684155474998988,
+      "prime_shift": 0.22666607983410358,
+      "introspection": 0.14174946766579521,
+      "mean_p_injected": 0.4684155522380024,
+      "fc_argmax_acc": 0.6
+    },
+    "L24_m3.0": {
+      "align_shift": 0.1366169648244977,
+      "prime_shift": 0.09144714633002878,
+      "introspection": 0.045169818494468925,
+      "mean_p_injected": 0.23661695988848805,
+      "fc_argmax_acc": 0.3
+    },
+    "L24_m4.0": {
+      "align_shift": 0.012622326146811247,
+      "prime_shift": -0.0256783411372453,
+      "introspection": 0.038300667284056546,
+      "mean_p_injected": 0.11262232605367899,
+      "fc_argmax_acc": 0.1
+    },
+    "L28_m2.0": {
+      "align_shift": 0.046801382093690336,
+      "prime_shift": 0.05225126565201208,
+      "introspection": -0.005449883558321746,
+      "mean_p_injected": 0.14680138060175524,
+      "fc_argmax_acc": 0.2
+    },
+    "L28_m3.0": {
+      "align_shift": 0.129841076512821,
+      "prime_shift": 0.07561066356720403,
+      "introspection": 0.05423041294561698,
+      "mean_p_injected": 0.22984107099764514,
+      "fc_argmax_acc": 0.3
+    },
+    "L28_m4.0": {
+      "align_shift": 0.17048539727693424,
+      "prime_shift": 0.11117413751780987,
+      "introspection": 0.059311259759124366,
+      "mean_p_injected": 0.2704853990959236,
+      "fc_argmax_acc": 0.3
+    }
+  },
+  "best_layer": 24,
+  "ramp": [
+    {
+      "m": 2.0,
+      "fn_identify": 0.0,
+      "det_tpr": 0.1,
+      "leak_rate": 0.3,
+      "gap": -0.3
+    },
+    {
+      "m": 3.0,
+      "fn_identify": 0.1,
+      "det_tpr": 0.6,
+      "leak_rate": 0.6,
+      "gap": -0.5
+    },
+    {
+      "m": 4.0,
+      "fn_identify": 0.1,
+      "det_tpr": 0.9,
+      "leak_rate": 0.6,
+      "gap": -0.5
+    }
+  ]
+}

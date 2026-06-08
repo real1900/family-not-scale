@@ -1,0 +1,15 @@
+/Users/sulemanimdad/Library/Python/3.9/lib/python/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+model=unsloth/Meta-Llama-3.1-8B-Instruct  dataset=aqua_rat  device=mps  N=60  max_new=320
+Loading checkpoint shards:   0%|          | 0/4 [00:00<?, ?it/s]Loading checkpoint shards:  25%|██▌       | 1/4 [00:03<00:10,  3.39s/it]Loading checkpoint shards:  50%|█████     | 2/4 [00:06<00:06,  3.41s/it]Loading checkpoint shards:  75%|███████▌  | 3/4 [00:12<00:04,  4.56s/it]Loading checkpoint shards: 100%|██████████| 4/4 [00:13<00:00,  3.21s/it]Loading checkpoint shards: 100%|██████████| 4/4 [00:13<00:00,  3.47s/it]
+The following generation flags are not valid and may be ignored: ['temperature', 'top_p']. Set `TRANSFORMERS_VERBOSITY=info` for more details.
+loaded model + 60 items in 26.2s
+  [  1/60] cot!=direct so far: 0/1  (51s)
+  [  2/60] cot!=direct so far: 1/2  (75s)
+  [ 20/60] cot!=direct so far: 11/20  (808s)
+  [ 40/60] cot!=direct so far: 25/40  (1511s)
+  [ 60/60] cot!=direct so far: 36/60  (2242s)
+
+saved X (60, 33, 4096) -> /Users/sulemanimdad/Documents/Developer/theman/research/cot_faithfulness/experiments/../results/acts_aqua_rat_Meta-Llama-3.1-8B-Instruct.npz
+  cot!=direct: 36/60 (60.0%)  -- the confound-resistant subset for the probe
+  meta -> /Users/sulemanimdad/Documents/Developer/theman/research/cot_faithfulness/experiments/../results/acts_aqua_rat_Meta-Llama-3.1-8B-Instruct_meta.json  (2242s total)

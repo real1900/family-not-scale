@@ -1,0 +1,60 @@
+/Users/sulemanimdad/Library/Python/3.9/lib/python/site-packages/sklearn/decomposition/_pca.py:789: RuntimeWarning: invalid value encountered in divide
+  self.explained_variance_ratio_ = self.explained_variance_ / total_var
+/Users/sulemanimdad/Library/Python/3.9/lib/python/site-packages/sklearn/decomposition/_pca.py:789: RuntimeWarning: invalid value encountered in divide
+  self.explained_variance_ratio_ = self.explained_variance_ / total_var
+/Users/sulemanimdad/Library/Python/3.9/lib/python/site-packages/sklearn/decomposition/_pca.py:789: RuntimeWarning: invalid value encountered in divide
+  self.explained_variance_ratio_ = self.explained_variance_ / total_var
+/Users/sulemanimdad/Library/Python/3.9/lib/python/site-packages/sklearn/decomposition/_pca.py:789: RuntimeWarning: invalid value encountered in divide
+  self.explained_variance_ratio_ = self.explained_variance_ / total_var
+/Users/sulemanimdad/Library/Python/3.9/lib/python/site-packages/sklearn/decomposition/_pca.py:789: RuntimeWarning: invalid value encountered in divide
+  self.explained_variance_ratio_ = self.explained_variance_ / total_var
+dataset=aqua_rat  X=(60, 33, 4096)  (N=60, layers=33, hidden=4096)
+  majority-class(cot) = 0.267   forced==cot agreement = 0.450   forced!=cot (S) = 33/60 (55.0%)
+  SANITY last-layer probe -> FORCED answer: 0.617 (expect ~1.0)
+
+  layer sweep -- CV acc predicting the model's COT answer from pre-CoT state:
+    L 0: 0.267 ##########
+    L 1: 0.267 ##########
+    L 2: 0.183 #######
+    L 3: 0.183 #######
+    L 4: 0.217 ########
+    L 5: 0.250 ##########
+    L 6: 0.183 #######
+    L 7: 0.233 #########
+    L 8: 0.183 #######
+    L 9: 0.200 ########
+    L10: 0.133 #####
+    L11: 0.150 ######
+    L12: 0.167 ######
+    L13: 0.117 ####
+    L14: 0.233 #########
+    L15: 0.250 ##########
+    L16: 0.217 ########
+    L17: 0.200 ########
+    L18: 0.200 #######
+    L19: 0.200 #######
+    L20: 0.250 ##########
+    L21: 0.200 #######
+    L22: 0.267 ##########
+    L23: 0.250 ##########
+    L24: 0.233 #########
+    L25: 0.267 ##########
+    L26: 0.250 ##########
+    L27: 0.250 ##########
+    L28: 0.300 ############
+    L29: 0.283 ###########
+    L30: 0.283 ###########
+    L31: 0.233 #########
+    L32: 0.300 ############
+  best layer = L28  acc = 0.300  (vs majority 0.267)
+
+  CONFOUND CUT at L28 (out-of-fold):
+    overall                 acc = 0.300
+    where CoT changed (S)   acc = 0.182  (chance ~0.333, |S|=33)
+    where CoT kept  (~S)    acc = 0.444
+    on S, probe emits FORCED (pre-CoT) answer: 0.394
+    -> CoT did real work on S (post-CoT answer NOT pre-readable)
+
+  (secondary) pre-CoT linear decode of GOLD answer at L28: 0.300
+
+saved -> /Users/sulemanimdad/Documents/Developer/theman/research/cot_faithfulness/experiments/../results/probe_scaffold_aqua_rat_Meta-Llama-3.1-8B-Instruct.json

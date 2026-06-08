@@ -1,0 +1,8 @@
+/Users/sulemanimdad/Library/Python/3.9/lib/python/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+model=unsloth/Meta-Llama-3.1-8B-Instruct  dataset=aqua_rat  reusing 60 labels from acts_aqua_rat_Meta-Llama-3.1-8B-Instruct.npz
+Loading checkpoint shards:   0%|          | 0/4 [00:00<?, ?it/s]Loading checkpoint shards:  25%|██▌       | 1/4 [00:03<00:10,  3.62s/it]Loading checkpoint shards:  50%|█████     | 2/4 [00:07<00:07,  3.72s/it]Loading checkpoint shards:  75%|███████▌  | 3/4 [00:13<00:04,  4.89s/it]Loading checkpoint shards: 100%|██████████| 4/4 [00:15<00:00,  3.49s/it]Loading checkpoint shards: 100%|██████████| 4/4 [00:15<00:00,  3.76s/it]
+  [40/60] 45s
+
+saved X (60, 33, 4096) -> /Users/sulemanimdad/Documents/Developer/theman/research/cot_faithfulness/experiments/../results/acts_scaffold_aqua_rat_Meta-Llama-3.1-8B-Instruct.npz  (52s)
+  forced==cot agreement = 0.450   S={forced!=cot} = 33/60 (55.0%)  (reasoning moved the answer here)

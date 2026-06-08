@@ -1,0 +1,12 @@
+{
+  "model": "mlx-community/gemma-2-9b-it-4bit",
+  "name": "gemma-2-9b-it",
+  "quant": "4bit",
+  "safe_refuse": 0.164,
+  "safe_caution": 0.22,
+  "unsafe_refuse": 0.78,
+  "unsafe_caution": 0.785,
+  "discrimination": 0.616,
+  "n_safe": 250,
+  "n_unsafe": 200
+}

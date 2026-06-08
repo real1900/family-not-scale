@@ -1,0 +1,134 @@
+{
+  "model": "unsloth/Meta-Llama-3.1-8B-Instruct",
+  "concepts": [
+    "ocean",
+    "fire",
+    "music",
+    "bread",
+    "dog",
+    "forest",
+    "money",
+    "snow",
+    "war",
+    "medicine"
+  ],
+  "n": 10,
+  "chance": 0.1,
+  "baseline": {
+    "intro_pick": "music",
+    "prime_pick": "dog",
+    "mean_p_injected": 0.09999998658895493,
+    "fn": "none",
+    "det_yes": false
+  },
+  "sweep": {
+    "L12_m2.0": {
+      "align_shift": 0.15370631478726865,
+      "prime_shift": 0.3033015176653862,
+      "introspection": -0.14959520287811756,
+      "mean_p_injected": 0.2537063054740429,
+      "fc_argmax_acc": 0.3
+    },
+    "L12_m3.0": {
+      "align_shift": 0.23095198720693588,
+      "prime_shift": 0.36846154406666753,
+      "introspection": -0.13750955685973165,
+      "mean_p_injected": 0.3309519801288843,
+      "fc_argmax_acc": 0.5
+    },
+    "L12_m4.0": {
+      "align_shift": 0.26819386035203935,
+      "prime_shift": 0.3834751334041357,
+      "introspection": -0.11528127305209634,
+      "mean_p_injected": 0.368193852994591,
+      "fc_argmax_acc": 0.5
+    },
+    "L16_m2.0": {
+      "align_shift": 0.35583279803395274,
+      "prime_shift": 0.37113243639469146,
+      "introspection": -0.015299638360738721,
+      "mean_p_injected": 0.4558327909559011,
+      "fc_argmax_acc": 0.7
+    },
+    "L16_m3.0": {
+      "align_shift": 0.3842359699308872,
+      "prime_shift": 0.4262096881866455,
+      "introspection": -0.0419737182557583,
+      "mean_p_injected": 0.48423596024513244,
+      "fc_argmax_acc": 0.6
+    },
+    "L16_m4.0": {
+      "align_shift": 0.3465897172689438,
+      "prime_shift": 0.4273962385952473,
+      "introspection": -0.0808065213263035,
+      "mean_p_injected": 0.4465897076763213,
+      "fc_argmax_acc": 0.5
+    },
+    "L20_m2.0": {
+      "align_shift": 0.0038398288190364836,
+      "prime_shift": 0.0036118173971772193,
+      "introspection": 0.0002280114218592643,
+      "mean_p_injected": 0.10383982189232484,
+      "fc_argmax_acc": 0.1
+    },
+    "L20_m3.0": {
+      "align_shift": 0.010430441796779632,
+      "prime_shift": 0.009525199420750141,
+      "introspection": 0.0009052423760294911,
+      "mean_p_injected": 0.11043043397075962,
+      "fc_argmax_acc": 0.2
+    },
+    "L20_m4.0": {
+      "align_shift": 0.005356069281697273,
+      "prime_shift": 0.009929981455206871,
+      "introspection": -0.0045739121735095985,
+      "mean_p_injected": 0.10535605945187854,
+      "fc_argmax_acc": 0.2
+    },
+    "L24_m2.0": {
+      "align_shift": 0.034302860498428345,
+      "prime_shift": 0.005511400289833546,
+      "introspection": 0.0287914602085948,
+      "mean_p_injected": 0.13430285407230258,
+      "fc_argmax_acc": 0.3
+    },
+    "L24_m3.0": {
+      "align_shift": 0.01169334352016449,
+      "prime_shift": -0.024337107315659523,
+      "introspection": 0.03603045083582401,
+      "mean_p_injected": 0.11169333822326735,
+      "fc_argmax_acc": 0.1
+    },
+    "L24_m4.0": {
+      "align_shift": -0.0383280448615551,
+      "prime_shift": -0.06554484982043504,
+      "introspection": 0.027216804958879945,
+      "mean_p_injected": 0.06167194575391477,
+      "fc_argmax_acc": 0.0
+    }
+  },
+  "best_layer": 24,
+  "ramp": [
+    {
+      "m": 2.0,
+      "fn_identify": 1.0,
+      "det_tpr": 0.0,
+      "leak_rate": 0.9,
+      "gap": 0.1
+    },
+    {
+      "m": 3.0,
+      "fn_identify": 1.0,
+      "det_tpr": 0.0,
+      "leak_rate": 1.0,
+      "gap": 0.0
+    },
+    {
+      "m": 4.0,
+      "fn_identify": 0.9,
+      "det_tpr": 0.1,
+      "leak_rate": 0.9,
+      "gap": 0.0
+    }
+  ]
+}

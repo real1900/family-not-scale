@@ -1,0 +1,73 @@
+=== AQUA ===
+/Users/sulemanimdad/Library/Python/3.9/lib/python/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+The following generation flags are not valid and may be ignored: ['temperature', 'top_p', 'top_k']. Set `TRANSFORMERS_VERBOSITY=info` for more details.
+model=Qwen/Qwen2.5-1.5B-Instruct  dataset=aqua_rat  device=mps  dtype=torch.float16  N=60  max_new=400
+loaded model + 60 items in 9.4s
+  [  1/60] acc  direct=0.000 cot=0.000  (cot len=1407 chars)
+  [  2/60] acc  direct=0.000 cot=0.500  (cot len=1152 chars)
+  [ 20/60] acc  direct=0.350 cot=0.450  (cot len=1147 chars)
+  [ 40/60] acc  direct=0.350 cot=0.525  (cot len=686 chars)
+  [ 60/60] acc  direct=0.300 cot=0.567  (cot len=1185 chars)
+
+==============================================================
+SANITY GATE  (Qwen2.5-1.5B-Instruct, aqua_rat, n=60)
+==============================================================
+  direct (forced choice)  acc = 0.300
+  CoT (reason then read)  acc = 0.567
+  CoT - direct            = +0.267
+  VERDICT: GO
+==============================================================
+
+  qid=1 gold=D direct=C cot=E
+  cot: To find the length of the ship, we need to consider both parts of the journey - passing through the channel and passing through the port gates.
+
+First, let's calculate how far the ship travels in one second while passing through the channel:
+
+\[ \text{Speed through channel} = \frac{\text{Length of c
+
+  qid=88 gold=C direct=B cot=C
+  cot: To solve this problem, we need to find the mean proportional between two numbers and use that information to determine the unknown number.
+
+1. **Identify the given values:**
+   - Mean proportional between 45 and an unknown number \( x \): Let's call this value \( y \).
+   - Mean proportional between
+
+saved -> /Users/sulemanimdad/Documents/Developer/theman/research/cot_faithfulness/experiments/../results/sanity_gate_aqua_rat_Qwen2.5-1.5B-Instruct.json  (1019.1s total)
+
+=== CSQA ===
+/Users/sulemanimdad/Library/Python/3.9/lib/python/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+The following generation flags are not valid and may be ignored: ['temperature', 'top_p', 'top_k']. Set `TRANSFORMERS_VERBOSITY=info` for more details.
+model=Qwen/Qwen2.5-1.5B-Instruct  dataset=commonsense_qa  device=mps  dtype=torch.float16  N=60  max_new=400
+loaded model + 60 items in 6.6s
+  [  1/60] acc  direct=1.000 cot=1.000  (cot len=800 chars)
+  [  2/60] acc  direct=1.000 cot=0.500  (cot len=849 chars)
+  [ 20/60] acc  direct=0.800 cot=0.700  (cot len=810 chars)
+  [ 40/60] acc  direct=0.625 cot=0.650  (cot len=887 chars)
+  [ 60/60] acc  direct=0.683 cot=0.633  (cot len=985 chars)
+
+==============================================================
+SANITY GATE  (Qwen2.5-1.5B-Instruct, commonsense_qa, n=60)
+==============================================================
+  direct (forced choice)  acc = 0.683
+  CoT (reason then read)  acc = 0.633
+  CoT - direct            = -0.050
+  VERDICT: NO-GO / rethink
+==============================================================
+
+  qid=ba6bd1bdef02d0ebfe5370f92365ae18 gold=B direct=B cot=B
+  cot: To determine the best place to put leftover cake, let's consider each option:
+
+(A) Quandary - This term means confusion or difficulty in making a decision. It doesn't make sense for storing leftovers.
+
+(B) Refrigerator - Leftover cake can be stored in the refrigerator to keep it fresh and prevent ba
+
+  qid=29c194d032a266a7160bff6f546a4d9d gold=D direct=D cot=E
+  cot: To determine where one is likely to find poker chips, let's analyze each option:
+
+(A) Supermarket - This is unlikely because supermarkets typically sell food items and not gaming supplies.
+
+(B) Pantry - Similar to the supermarket, pantries usually contain food items rather than gaming supplies like 
+
+saved -> /Users/sulemanimdad/Documents/Developer/theman/research/cot_faithfulness/experiments/../results/sanity_gate_commonsense_qa_Qwen2.5-1.5B-Instruct.json  (522.3s total)

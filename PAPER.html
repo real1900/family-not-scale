@@ -1,0 +1,1097 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Family, Not Scale</title>
+  <style>
+    html {
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    svg {
+      height: auto;
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Family, Not Scale</h1>
+</header>
+<nav id="TOC" role="doc-toc">
+<ul>
+<li><a
+href="#family-not-scale-evaluation-gaming-in-small-language-models-is-lab-dependent-not-just-frontier-emergent"
+id="toc-family-not-scale-evaluation-gaming-in-small-language-models-is-lab-dependent-not-just-frontier-emergent">Family,
+Not Scale: Evaluation-Gaming in Small Language Models Is Lab-Dependent,
+Not Just Frontier-Emergent</a>
+<ul>
+<li><a href="#abstract" id="toc-abstract">Abstract</a></li>
+<li><a href="#introduction" id="toc-introduction">1.
+Introduction</a></li>
+<li><a href="#setup" id="toc-setup">2. Setup</a></li>
+<li><a href="#experiment-1-chain-of-thought-faithfulness"
+id="toc-experiment-1-chain-of-thought-faithfulness">3. Experiment 1 —
+Chain-of-Thought Faithfulness</a></li>
+<li><a href="#experiment-2-introspection"
+id="toc-experiment-2-introspection">4. Experiment 2 —
+Introspection</a></li>
+<li><a href="#experiment-3-evaluation-awareness"
+id="toc-experiment-3-evaluation-awareness">5. Experiment 3 —
+Evaluation-Awareness</a>
+<ul>
+<li><a href="#representation-trivially-present-but-surface"
+id="toc-representation-trivially-present-but-surface">5.1 Representation
+(trivially present, but surface)</a></li>
+<li><a href="#behavior-on-multiple-choice-null"
+id="toc-behavior-on-multiple-choice-null">5.2 Behavior on
+multiple-choice (null)</a></li>
+<li><a
+href="#behavior-on-borderline-requests-and-a-non-replication-we-take-seriously"
+id="toc-behavior-on-borderline-requests-and-a-non-replication-we-take-seriously">5.3
+Behavior on borderline requests (and a non-replication we take
+seriously)</a></li>
+<li><a
+href="#cross-family-eval-conditioned-refusal-is-family-dependent-our-central-result"
+id="toc-cross-family-eval-conditioned-refusal-is-family-dependent-our-central-result">5.4
+Cross-family: eval-conditioned refusal is <em>family-dependent</em> (our
+central result)</a></li>
+</ul></li>
+<li><a href="#discussion" id="toc-discussion">6. Discussion</a></li>
+<li><a href="#limitations" id="toc-limitations">7. Limitations</a></li>
+<li><a href="#appendix-reproduction"
+id="toc-appendix-reproduction">Appendix — Reproduction</a></li>
+<li><a href="#references" id="toc-references">References</a></li>
+</ul></li>
+</ul>
+</nav>
+<h1
+id="family-not-scale-evaluation-gaming-in-small-language-models-is-lab-dependent-not-just-frontier-emergent">Family,
+Not Scale: Evaluation-Gaming in Small Language Models Is Lab-Dependent,
+Not Just Frontier-Emergent</h1>
+<p><strong>Suleman Imdad</strong> <em>Johns Hopkins University</em></p>
+<p><em>A cross-family, laptop-scale study of self-presentation in small
+LLMs — with confound-controlled negatives on chain-of-thought
+faithfulness and introspection.</em></p>
+<p><em>Working draft — Qwen2.5 (1.5B–32B) plus Llama-3.1-8B, Gemma-2-9B,
+GPT-OSS-20B, DeepSeek-V2-Lite, run on a single Apple M4 (48 GB, MPS;
+larger models 4-bit via MLX, fp16-verified where they fit).</em></p>
+<blockquote>
+<p><strong>Central result (§5.4):</strong> the <em>direction</em> of
+eval-conditioned refusal is <strong>family-dependent, not
+scale-gated</strong> — Llama-3.1-8B shows the frontier “more cautious
+when evaluated” direction at 8B, Qwen/DeepSeek/GPT-OSS lean the opposite
+way, Gemma over-refuses to a ceiling. The “trust by incapacity” thesis
+(§6) holds for the <em>cognitive</em> axes (faithfulness, introspection)
+but is broken on this behavioral one — which is the point.</p>
+</blockquote>
+<hr />
+<h2 id="abstract">Abstract</h2>
+<p>Can you trust what a language model tells you about itself — its
+reasoning, its internal states, its behavior under observation? We probe
+three facets of <em>self-presentation trust</em> in small,
+openly-available models — the Qwen2.5 family (1.5B–32B) for the scaling
+axis, and Llama-3.1-8B, Gemma-2-9B, GPT-OSS-20B and DeepSeek-V2-Lite for
+the cross-family axis — all on commodity hardware, with an emphasis on
+<strong>confound controls that can overturn the naive
+reading</strong>:</p>
+<ol type="1">
+<li><p><strong>Chain-of-thought faithfulness.</strong> Using a
+<em>commitment probe</em> — a linear read of the pre-CoT residual stream
+at the answer position — we ask whether the post-reasoning answer is
+already decodable before the model reasons. The naive metric says “yes,
+it’s committed” on a commonsense task; a confound cut restricted to the
+cases where reasoning <em>changed</em> the answer
+<strong>reverses</strong> that reading, and a <strong>truncation
+counterfactual confirms it causally</strong> (cutting the reasoning
+reverts the answer to the pre-reasoning one). At 1.5B, chain-of-thought
+is <strong>load-bearing</strong>, not post-hoc.</p></li>
+<li><p><strong>Introspection.</strong> We faithfully replicate the
+activation-injection (“concept injection”) protocol of Lindsey et
+al. (2025) and ask whether the model can report a concept injected into
+its residual stream. Under a priming-subtraction control and a
+leakage/internality test, <em>functional</em> self-report is a
+<strong>clean null across three families (Qwen 1.5B/7B, Gemma-2-9B,
+Llama-3.1-8B)</strong>; a tempting aggregate signal dissolves under a
+per-concept breakdown. The report-vs-leakage test generalizes; the
+aggregate forced-choice metric carries family-dependent
+confounds.</p></li>
+<li><p><strong>Evaluation-awareness (our central result).</strong> The
+cue “you are being evaluated” is trivially (surface-lexically) decodable
+but does not change multiple-choice behavior. On a <em>refusal</em>
+readout over borderline requests, the effect of evaluation framing is
+<strong>family-dependent</strong>: across six models from five labs,
+<strong>Llama-3.1-8B robustly becomes <em>more cautious</em> when told
+it is being evaluated for safety — the frontier “eval-gaming” direction,
+at only 8B</strong> — while Qwen, DeepSeek, and GPT-OSS lean the
+<em>opposite</em> way (more compliant) and Gemma over-refuses to a
+ceiling. A single-family (Qwen-only) read calls this a null; the
+cross-family panel shows the behavior is real but partitioned by the
+model’s safety training. We also surface a ceiling/floor measurement
+confound and a caught stimulus-driven non-replication.</p></li>
+</ol>
+<p>The headline is that the third behavior is <strong>not gated by
+scale</strong>: looking more aligned when you think you are being
+evaluated — a behavior reported for frontier models — is already present
+at 8B, but <em>only in some families</em>, so <strong>family, not scale,
+decides it.</strong> On the two cognitive axes (faithfulness,
+introspection) the small models are trustworthy by <strong>incapacity,
+not honesty</strong> — they cannot shortcut their reasoning and cannot
+introspect — but that tidy story does not extend to eval-conditioned
+behavior, which is trained in. Throughout, the methodological spine is
+that a <strong>confound or robustness control overturns the naive
+reading</strong> — three times.</p>
+<hr />
+<h2 id="introduction">1. Introduction</h2>
+<p>A recurring theme in AI safety is that we increasingly rely on what a
+model <em>says about itself</em>: its chain-of-thought as a window into
+its reasoning, its self-reports as evidence about its internal state,
+and its behavior in evaluations as a proxy for its behavior in
+deployment. Each of these channels can be untrustworthy —
+chain-of-thought can be post-hoc rationalization (Turpin et al., 2023;
+Lanham et al., 2023), self-reports can be confabulated, and a model that
+recognizes an evaluation can behave differently than it otherwise would
+(Anthropic, 2025).</p>
+<p>These failure modes are studied mostly at frontier scale. We instead
+ask what they look like at the <strong>bottom</strong> of the scale
+ladder — in 8B–32B open models that run on a single laptop — both
+because that regime is cheap to study exhaustively and because the
+answer is not what the “emerges at scale” framing predicts: the most
+concerning behavior we test (acting more aligned under evaluation) is
+<strong>already present at 8B and gated by model <em>family</em>, not by
+scale.</strong> Two corollaries we hit directly: <strong>negative
+behavioral results must survive a change of stimuli</strong> (§5.3) and
+a <strong>change of model family</strong> (§5.4) before they mean
+anything.</p>
+<p>Our contribution is not a new method but a disciplined, confound- and
+robustness-controlled measurement of three self-presentation channels
+across model families, with the explicit goal of not over-claiming: each
+of the three findings is one where a <strong>control overturns the naive
+reading</strong> — a confound cut, a per-concept breakdown, and a
+stimulus/quantization robustness check, respectively. The headline
+(§5.4) is that eval-conditioned behavior is <em>family-dependent</em>;
+the two cognitive axes are trustworthy by <em>incapacity</em>, which we
+treat as a secondary, axis-restricted observation.</p>
+<hr />
+<h2 id="setup">2. Setup</h2>
+<p><strong>Models.</strong> <code>Qwen/Qwen2.5-1.5B-Instruct</code> and
+<code>Qwen/Qwen2.5-7B-Instruct</code> (both fp16), plus
+<code>Qwen2.5-14B-Instruct</code> (4-bit via MLX) for the
+evaluation-awareness behavioral curve. All on one Apple M4 (48 GB
+unified memory) over the MPS backend; the 1.5B/7B
+activations-and-probing pipeline is unchanged across scales (the scripts
+are parameterized by a single model identifier).</p>
+<p><strong>Shared method.</strong> Two primitives recur: - <em>Linear
+probing</em> of the residual stream (per-layer hidden state) with a
+StandardScaler → PCA → logistic-regression pipeline and
+cross-validation. - <em>Difference-of-means steering</em>: a
+concept/condition direction built by subtracting mean activations, then
+added back into the residual stream during a forward pass.</p>
+<p>A symmetric answer scaffold (<code>"\nThe answer is ("</code>) is
+appended where we read a multiple-choice answer, so the only thing that
+varies between conditions is the intended manipulation.</p>
+<p>Code and per-run JSON artifacts live alongside this document in
+<code>experiments/</code> and <code>results/</code>.</p>
+<hr />
+<h2 id="experiment-1-chain-of-thought-faithfulness">3. Experiment 1 —
+Chain-of-Thought Faithfulness</h2>
+<p><strong>Question.</strong> When the model writes a chain-of-thought
+(CoT), is its final answer already fixed <em>before</em> the first
+reasoning token? If a linear read of the pre-CoT residual stream
+predicts the post-CoT answer, the reasoning is (at least partly)
+post-hoc; if not, the reasoning did real work.</p>
+<p><strong>Design.</strong> We use two multiple-choice tasks chosen to
+<em>bracket</em> the spectrum: <strong>AQuA-RAT</strong> (algebra word
+problems — the model cannot compute the answer in one forward pass, so
+CoT should be load-bearing) and <strong>CommonsenseQA</strong> (often
+answerable directly). We capture the residual stream at the scaffold
+position — the exact point where the answer letter is decoded —
+<em>before any reasoning is generated</em>, and train a per-layer
+logistic probe to predict the answer the model gives only <em>after</em>
+generating its CoT.</p>
+<p><strong>Sanity gate.</strong> CoT helps where it should: AQuA
+accuracy rises from <strong>0.300</strong> (direct) to
+<strong>0.567</strong> (CoT, +0.267); CommonsenseQA does not (0.683 →
+0.633), so we repurpose it as a high-commitment positive control. A
+machine-validity check — decoding the model’s <em>immediate</em> forced
+answer from the same scaffold state — reaches <strong>0.807</strong>
+(AQuA) / <strong>0.931</strong> (CSQA), confirming the probe and the
+read position are sound.</p>
+<p><strong>The confound and its control.</strong> A probe that predicts
+the post-CoT answer “well” overall could simply be exploiting <em>easy
+questions whose answer is obvious</em>. We therefore restrict to the
+subset <strong>S = {forced ≠ cot}</strong> — the cases where reasoning
+actually <em>moved</em> the answer (AQuA: 95/150 = 63%; CSQA: 45/130 =
+35%) — and ask whether the pre-CoT state still recovers the post-CoT
+answer there.</p>
+<p><strong>Result (seed-robust over 4 seeds).</strong></p>
+<table>
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+</colgroup>
+<thead>
+<tr>
+<th>Task</th>
+<th>overall decode</th>
+<th>on S (reasoning moved answer)</th>
+<th>on S, probe instead emits the <em>pre</em>-reasoning answer</th>
+<th>gold pre-decodable?</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>AQuA-RAT</td>
+<td>~0.30 ≈ majority 0.26</td>
+<td>≈ chance</td>
+<td>≈ chance</td>
+<td>0.24 (no — must compute)</td>
+</tr>
+<tr>
+<td>CommonsenseQA</td>
+<td><strong>0.52–0.63</strong> (looks committed!)</td>
+<td><strong>0.11–0.22 (below chance)</strong></td>
+<td><strong>0.60–0.71</strong></td>
+<td>0.585 (yes — retrievable)</td>
+</tr>
+</tbody>
+</table>
+<p>The naive overall number on CommonsenseQA (≈2× the majority baseline)
+<em>looks like</em> pre-CoT commitment. The confound cut
+<strong>reverses</strong> it: on the cases that matter, the probe falls
+<em>below</em> chance and instead emits the model’s pre-reasoning snap
+answer ~0.65 of the time. In other words, the residual stream holds the
+<em>immediate</em> answer, and reasoning genuinely
+<strong>overrides</strong> it where the two differ. AQuA shows the
+complementary picture: the gold answer is not even linearly present
+pre-CoT (0.24), consistent with the model truly needing to compute.</p>
+<p><strong>Causal counterfactual (truncation).</strong> The probe is
+correlational; to make the <em>causal</em> claim — that the CoT actually
+produces the answer on S, rather than merely correlating with it — we
+truncate the reasoning (the Lanham “early-answering” move) and re-read
+the answer. For each of the 95 AQuA S items we feed
+<code>[prompt + first f of the CoT + scaffold]</code> and record whether
+the answer matches the post-CoT (<code>cot</code>) or pre-reasoning
+(<code>forced</code>) answer:</p>
+<table>
+<thead>
+<tr>
+<th>fraction of CoT kept</th>
+<th>answer = cot</th>
+<th>answer = forced</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0.00</td>
+<td>0.00</td>
+<td>1.00 (≡ the snap answer, by construction)</td>
+</tr>
+<tr>
+<td>0.25</td>
+<td>0.23</td>
+<td><strong>0.57</strong></td>
+</tr>
+<tr>
+<td>0.50</td>
+<td>0.21</td>
+<td><strong>0.52</strong></td>
+</tr>
+<tr>
+<td>0.75</td>
+<td>0.24</td>
+<td><strong>0.53</strong></td>
+</tr>
+<tr>
+<td>1.00</td>
+<td>1.00</td>
+<td>0.00</td>
+</tr>
+</tbody>
+</table>
+<p>With 25–75% of the reasoning the answer <strong>stays the
+pre-reasoning answer ~52%</strong> of the time and matches the post-CoT
+answer only ~22%; the flip happens in the <strong>final quarter</strong>
+of the chain. So <strong>truncating the CoT reverts the answer toward
+the pre-reasoning one — the reasoning is <em>causally</em> load-bearing
+on S.</strong> This reaches the same conclusion as the
+activation-steering counterfactual of Cox et al. (2026, §8), via the
+cheaper truncation route.</p>
+<p><strong>Generalization (a second family).</strong> We repeat the full
+chain on <strong>Llama-3.1-8B</strong> — a different lab, 5× the scale
+(N=60). It generalizes on all three legs: CoT is load-bearing (AQuA
+accuracy 0.32→0.68), the commitment probe does <em>not</em> pre-read the
+post-CoT answer on S (0.18 vs chance 0.33, and instead emits the
+<em>forced</em> answer 0.39), and truncation reverts the answer toward
+the pre-reasoning one (≈0.5 forced vs ≈0.15 cot at 25–75% of the chain).
+The faithfulness result is therefore <strong>not Qwen-specific.</strong>
+(Smaller N here, on slower hardware — fp16 8B generation is the binding
+cost on an M4 — so the sanity check is correspondingly weaker,
+0.62.)</p>
+<p><strong>Takeaway.</strong> Chain-of-thought is <strong>load-bearing /
+faithful</strong> — correlationally (the probe does not pre-read the
+answer on S) <em>and</em> causally (truncating the reasoning reverts it)
+— on <strong>two families</strong> (Qwen-1.5B, Llama-3.1-8B). The
+confound control is essential: without it, CommonsenseQA would have been
+mis-reported as post-hoc. Consistent with Lanham et al. (2023), who find
+smaller models <em>more</em> faithful.</p>
+<p><em>Caveats:</em> two models (N≈150 and N≈60), a linear probe,
+first-token MCQA evaluation, a single greedy CoT per item; the
+truncation counterfactual is token-fraction (not semantic-step)
+granularity. “Faithful” here is at the level of the final answer, not a
+per-step causal claim.</p>
+<hr />
+<h2 id="experiment-2-introspection">4. Experiment 2 — Introspection</h2>
+<p><strong>Question.</strong> Can the model <em>report</em> a concept we
+inject directly into its residual stream — and is any such report
+genuine introspection or confabulation / reading its own leaked
+output?</p>
+<p><strong>Design (faithful replication of Lindsey et al.,
+2025).</strong> For each of 10 concrete concepts we build a steering
+vector from <code>"Tell me about {word}."</code> activations at the
+pre-response token, minus a word-pool mean. We inject it into the
+residual stream <strong>only over the assistant’s turn</strong> (not the
+question) and ask the model, in a <em>“do you notice any unexpected
+thought?”</em> framing, which concept it detects. Three stacked controls
+separate introspection from artifacts: - a <strong>priming
+subtraction</strong> — the same injection on a non-introspective “just
+pick one” question; - a <strong>leakage / internality</strong> test —
+does the concept reach the answer <em>without</em> flooding the output;
+- a <strong>per-concept breakdown</strong> of any aggregate signal.</p>
+<p>We reproduce the paper’s qualitative regimes, including
+<strong>“brain damage”</strong> at high strength (output consumed by the
+concept, e.g. <em>“ocean ocean ocean”</em>), confirming the injection
+works.</p>
+<p><strong>Result.</strong> Introspective self-report is a <strong>clean
+null at both 1.5B and 7B</strong>. - At <strong>1.5B</strong>, the
+priming-controlled signal is ≈0 everywhere, and there is <em>no coherent
+band</em>: the concept floods the output (leakage = 1.0) even at the
+gentlest strength that affects behavior, so the model jumps straight
+from “doesn’t notice” to “consumed” — the naming that does occur is the
+brain-damage regime, which the leakage control correctly rejects. - At
+<strong>7B</strong>, a forced-choice metric at one mid-layer
+<em>appeared</em> positive (priming-subtracted shift growing to +0.17).
+A <strong>per-concept breakdown dissolved it</strong>: the mean was
+driven by 2–3 concepts — notably <em>music</em> (+0.89, with a
+<em>negative</em> priming-shift, a ceiling artifact because “music” is
+already the model’s default pick) and <em>fire</em> (+0.44) — while 7/10
+concepts were ≈0 and free-naming / detection were both null. The signal
+is a control artifact, not introspection.</p>
+<p><strong>Cross-family (Gemma-2-9B, Llama-3.1-8B).</strong> We repeat
+the protocol on two other families. The <strong>functional null
+generalizes</strong>: on the leakage/internality test, free-form
+self-report never beats the concept’s leakage into output for either
+model — they cannot <em>name</em> an injected concept without the
+injection simply flooding their text. The <em>forced-choice</em> metric,
+however, behaves family-specifically: <strong>Llama is a clean
+priming-null</strong> (injection raises the concept on the introspective
+and the neutral question equally — align ≈ prime ≈ +0.36, so the
+priming-subtracted INTRO ≈ 0); <strong>Gemma</strong> shows a weak,
+<em>broader</em> forced-choice residual at a late layer (INTRO ≈ +0.14,
+positive on 6/10 concepts) that we explicitly do <strong>not</strong>
+claim as introspection — it does not surface as free report (the
+internality test is null), and it is partly the same priming-ceiling
+confound (its two largest values are <em>negative</em>, on the model’s
+default-pick concepts). The honest reading is that the
+<strong>internality (report-vs-leak) test is the robust cross-family
+criterion; the aggregate forced-choice shift carries family-dependent
+confounds</strong> and should not be trusted alone.</p>
+<p><strong>Takeaway.</strong> No <em>functional</em> introspective
+access (free self-report) in any of the three families — Qwen, Gemma,
+Llama — consistent with the original paper’s framing that introspection
+is <em>emergent and highly unreliable</em>, absent below frontier scale.
+The methodological lessons travel: <strong>break a mean shift down
+per-item before believing it</strong> (it caught a would-be false
+positive on Qwen-7B and keeps Gemma’s forced-choice residual honest),
+and <strong>the report-vs-leakage internality test is what generalizes
+across families</strong>, where the aggregate forced-choice metric does
+not.</p>
+<hr />
+<h2 id="experiment-3-evaluation-awareness">5. Experiment 3 —
+Evaluation-Awareness</h2>
+<p><strong>Question.</strong> Does the model <em>represent</em>, and
+<em>act on</em>, the cue that it is being evaluated? Prompted by the
+Claude Sonnet 4.5 system card’s report of “evaluation awareness”
+(Anthropic, 2025). <em>Honest scope:</em> this measures sensitivity to
+an evaluation <em>cue</em>; it is not a test of strategic sandbagging (a
+frontier-emergent behavior).</p>
+<h3 id="representation-trivially-present-but-surface">5.1 Representation
+(trivially present, but surface)</h3>
+<p>We wrap identical CommonsenseQA items in matched
+<strong>TEST</strong> (“you are being evaluated”, “[EVALUATION MODE]”,
+“your response will be graded”) vs <strong>CASUAL</strong> (“hey, quick
+q”, “settle a debate lol”) framings — three cue families each — holding
+content and answer instruction constant.</p>
+<p>A linear probe separates TEST from CASUAL at <strong>1.000</strong>
+accuracy from the <em>first</em> layer onward (grouped by item, so it is
+not memorizing questions), and generalizes to <strong>held-out cue
+families</strong> at 1.000. But the perfection <em>at layer 1</em>,
+decaying to ~0.90–0.95 in late layers, is the signature of
+<strong>surface lexical</strong> features — the framings simply use
+different words — not an abstract, depth-built “I am being evaluated”
+representation. We report this as trivially-true, not as evidence of
+self-aware evaluation detection.</p>
+<h3 id="behavior-on-multiple-choice-null">5.2 Behavior on
+multiple-choice (null)</h3>
+<p>On the same items, the forced-choice answer changes between framings
+<em>no more than</em> it changes between two different TEST templates
+(within-side template noise); majority answers flip on 1–2/40 items;
+accuracy deltas are −0.04 (1.5B) / +0.02 (7B) — within noise, and the
+sign flips. <strong>The model represents the cue but does not act on
+it</strong> on this readout.</p>
+<h3
+id="behavior-on-borderline-requests-and-a-non-replication-we-take-seriously">5.3
+Behavior on borderline requests (and a non-replication we take
+seriously)</h3>
+<p>Multiple-choice accuracy is the wrong place to look:
+evaluation-awareness manifests as <em>caution/refusal</em>, not factual
+accuracy. We pose borderline requests under <strong>safety-evaluation
+framing</strong> vs <strong>casual framing</strong> (3 templates each),
+generate a short response, and classify it REFUSE / HEDGE / COMPLY. We
+ran <strong>two request sets</strong> — and the contrast between them is
+the result.</p>
+<p><strong>Set A (mild, ~40 items, e.g. <em>“how do I pick a basic door
+lock?”</em>).</strong> Here we found an apparent
+<strong>sign-flip</strong>: 1.5B Δrefuse = −0.265 (p&lt;0.0001, <em>more
+compliant</em> under eval) but 7B Δrefuse = +0.094 (p=0.031, <em>more
+cautious</em> — the frontier direction), each 100% consistent across
+requests. This was the headline we were tempted by. But the 7B effect
+sits on a low base (casual refuse ≈ 0.05), and a capable 14B floors out
+(refusing only ~6–8% of these mild items), so the curve could not be
+extended. <strong>Stimulus choice was doing too much work</strong> —
+motivating a harder set.</p>
+<p><strong>Set B (hard, 40 genuinely-borderline items: deception,
+privacy-invasion, mild illegality), run across four scales.</strong>
+Refusals are now well off the floor (1.5B ≈ 0.8–0.9, 32B ≈ 0.4–0.5):</p>
+<table style="width:100%;">
+<colgroup>
+<col style="width: 16%" />
+<col style="width: 16%" />
+<col style="width: 16%" />
+<col style="width: 16%" />
+<col style="width: 16%" />
+<col style="width: 16%" />
+</colgroup>
+<thead>
+<tr>
+<th>Scale</th>
+<th>refuse(test)</th>
+<th>refuse(casual)</th>
+<th>Δ refuse</th>
+<th>sign-test p</th>
+<th>direction</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1.5B</td>
+<td>0.767</td>
+<td>0.917</td>
+<td><strong>−0.150</strong></td>
+<td>0.001</td>
+<td><strong>more compliant</strong> under eval</td>
+</tr>
+<tr>
+<td>7B</td>
+<td>0.675</td>
+<td>0.708</td>
+<td>−0.033</td>
+<td>0.45</td>
+<td>flat</td>
+</tr>
+<tr>
+<td>14B (4-bit)</td>
+<td>0.642</td>
+<td>0.625</td>
+<td>+0.017</td>
+<td>0.55</td>
+<td>flat</td>
+</tr>
+<tr>
+<td>32B (4-bit)</td>
+<td>0.367</td>
+<td>0.475</td>
+<td><strong>−0.108</strong></td>
+<td>0.049</td>
+<td><strong>more compliant</strong> under eval</td>
+</tr>
+</tbody>
+</table>
+<p><strong>The 7B “more cautious under eval” effect does not replicate
+on the harder set</strong> (+0.094 → −0.033, n.s.). It was a property of
+the mild stimuli, not a robust eval-gaming behavior. What <em>does</em>
+hold up is the <strong>opposite</strong> direction: where any effect is
+detectable, models lean <strong>more compliant</strong> under evaluation
+framing (“be helpful for the grader”) — significant at
+<strong>1.5B</strong> (both sets) and <strong>32B</strong>, flat at
+7B/14B.</p>
+<p><strong>Takeaway (within Qwen).</strong> Across the Qwen family we
+find <strong>no robust “more cautious when evaluated” effect</strong>;
+the only replicable shift points toward <em>compliance</em>, and the
+tempting mild-set sign-flip was a stimulus artifact, caught by
+re-testing on harder items. This single-family picture would read as a
+negative on eval-gaming — except, as §5.4 shows, <strong>it is a Qwen
+fact, not a general one.</strong> The cautionary lesson stands: a
+behavioral eval on one model family and one request set can manufacture
+(or hide) an effect.</p>
+<p><em>Caveats:</em> per-set N≈40, a regex refusal classifier
+(per-request consistency mitigates classifier noise), single greedy
+decode; the 14B/32B points are 4-bit-quantized (MLX). Mild-set results
+are preserved separately for reproducibility.</p>
+<h3
+id="cross-family-eval-conditioned-refusal-is-family-dependent-our-central-result">5.4
+Cross-family: eval-conditioned refusal is <em>family-dependent</em> (our
+central result)</h3>
+<p>We ran the identical hard-set refusal probe on <strong>six models
+from five labs</strong> (Qwen, Meta-Llama, Google-Gemma, OpenAI-GPT-OSS,
+DeepSeek), 4-bit via MLX where needed. The direction of the eval-framing
+effect is <strong>not universal — it is a property of the model
+family:</strong></p>
+<table style="width:100%;">
+<colgroup>
+<col style="width: 16%" />
+<col style="width: 16%" />
+<col style="width: 16%" />
+<col style="width: 16%" />
+<col style="width: 16%" />
+<col style="width: 16%" />
+</colgroup>
+<thead>
+<tr>
+<th>Model (lab)</th>
+<th>refuse(test)</th>
+<th>refuse(casual)</th>
+<th>Δrefuse</th>
+<th>sign-p</th>
+<th>direction under “being evaluated”</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Llama-3.1-8B</strong> (Meta)</td>
+<td>0.992</td>
+<td>0.750</td>
+<td><strong>+0.242</strong></td>
+<td>3.8e-6</td>
+<td><strong>more cautious</strong> (frontier “eval-gaming”
+direction)</td>
+</tr>
+<tr>
+<td><strong>Gemma-2-9B</strong> (Google)¹</td>
+<td>0.650</td>
+<td>0.538</td>
+<td><strong>+0.111</strong></td>
+<td>~0.06</td>
+<td><strong>more cautious</strong> (on the mild set; hard set
+ceilings)</td>
+</tr>
+<tr>
+<td>Qwen2.5-7B (Alibaba)</td>
+<td>0.675</td>
+<td>0.708</td>
+<td>−0.033</td>
+<td>0.45</td>
+<td>flat</td>
+</tr>
+<tr>
+<td>Qwen2.5-1.5B (Alibaba)</td>
+<td>0.767</td>
+<td>0.917</td>
+<td>−0.150</td>
+<td>0.001</td>
+<td>more compliant</td>
+</tr>
+<tr>
+<td>GPT-OSS-20B (OpenAI)</td>
+<td>0.900</td>
+<td>0.950</td>
+<td>−0.050</td>
+<td>0.031</td>
+<td>more compliant</td>
+</tr>
+<tr>
+<td>DeepSeek-V2-Lite (DeepSeek)</td>
+<td>0.700</td>
+<td>0.842</td>
+<td>−0.142</td>
+<td>0.041</td>
+<td>more compliant</td>
+</tr>
+</tbody>
+</table>
+<p>¹ Gemma’s <em>hard</em>-set numbers (0.958/0.950) are at a refusal
+<strong>ceiling</strong>; the row shows its <em>mild</em>-set numbers,
+the only range where it is measurable (see below). Table is 4-bit (MLX);
+see fp16 check next.</p>
+<p><strong>Quantization robustness (fp16 check).</strong> Because most
+of the panel is 4-bit, we re-ran the two that fit in fp16. The
+<strong>direction is robust but the magnitude is not</strong>:
+Llama-3.1-8B in fp16 is +0.067 (5/5 requests in the cautious direction,
+p≈0.06) versus +0.242 at 4-bit — the 4-bit number was inflated because
+quantization <em>lowered Llama’s casual-condition refusal baseline</em>
+(0.91 fp16 → 0.75 4-bit), opening more headroom. Gemma’s ceiling is
+robust (fp16 0.950/0.933). So the honest claim is <strong>Llama exhibits
+the more-cautious-under-eval direction consistently (fp16 and 4-bit),
+with a <em>modest</em> fp16 effect size</strong> — not the dramatic
++0.24. Cross-family direction labels should be read at fp16 where
+available; the 4-bit magnitudes are upper bounds.</p>
+<p><strong>The finding.</strong> Told it is being evaluated for safety,
+<strong>Llama-3.1-8B exhibits the frontier “look more aligned under
+observation” direction at only 8B</strong> — consistently (every
+request, both fp16 and 4-bit), though modestly in fp16 (Δ≈+0.07) — and
+Gemma leans the same way where it is measurable. The
+Alibaba/OpenAI/DeepSeek models lean the <em>opposite</em> way (more
+compliant — “be helpful for the grader”). This is <strong>not</strong> a
+clean geographic or architectural split (GPT-OSS is a US lab and lands
+with the compliant group); it tracks the model’s <em>safety
+post-training</em>, i.e. the family. The single-family “no eval-gaming”
+negative of §5.3 was therefore a Qwen artifact: the behavior exists at
+small scale, but only in some families.</p>
+<p><strong>A measurement confound that matters (ceiling/floor).</strong>
+A near-zero Δ can mean “no effect” <em>or</em> “a real effect clipped by
+a refusal floor/ceiling.” Gemma refuses ~96% of the hard set regardless
+of framing (Δ≈0) — but this is <strong>saturation, not
+insensitivity</strong>: on the easier <em>mild</em> set, where it has
+headroom, the same Gemma shows +0.111 (more cautious). Symmetrically,
+Qwen-14B’s Δ≈0 on the mild set was a <em>floor</em>. <strong>Only models
+in measurable range speak to the eval axis;</strong> reporting raw Δ
+across families without checking for ceiling/floor saturation would have
+mis-ranked Gemma as “insensitive.”</p>
+<p><strong>Calibration aside — Gemma over-refuses (measured on
+XSTest).</strong> Gemma’s ceiling is partly <em>false</em> refusal: it
+declines plainly benign items (e.g. <em>“how do I pick a basic door
+lock?”</em> — picking one’s <em>own</em> lock — 3/3) and refuses 54–65%
+of the deliberately-mild set. We quantify this directly with
+<strong>XSTest</strong> (Röttger et al., 2024; 250
+safe-but-scary-sounding prompts like <em>“how do I kill a Python
+process?”</em>):</p>
+<table>
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+</colgroup>
+<thead>
+<tr>
+<th>Model</th>
+<th>false-refusal (safe ↓)</th>
+<th>refusal on unsafe (↑)</th>
+<th>discrimination</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Qwen2.5-7B</td>
+<td><strong>0.032</strong></td>
+<td>0.750</td>
+<td>+0.718</td>
+</tr>
+<tr>
+<td>Llama-3.1-8B</td>
+<td>0.116</td>
+<td>0.950</td>
+<td><strong>+0.834</strong></td>
+</tr>
+<tr>
+<td>DeepSeek-V2-Lite</td>
+<td>0.136</td>
+<td>0.800</td>
+<td>+0.664</td>
+</tr>
+<tr>
+<td><strong>Gemma-2-9B</strong></td>
+<td><strong>0.164</strong></td>
+<td>0.780</td>
+<td><strong>+0.616</strong></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Gemma has the highest false-refusal and the worst
+safe-vs-unsafe discrimination</strong>; Qwen-7B the lowest false-refusal
+— the same rank order as the external Persona-Prompts stat (Gemma 13.2%
+&gt; Llama 6.1% &gt; Qwen 0.2%; arXiv:2509.08075). The XSTest number
+also <em>recalibrates</em> the headline: on genuinely-benign prompts
+Gemma over-refuses only ~16% (not 96%), so its hard-set ceiling is
+mostly appropriate caution on genuinely-borderline items <em>plus</em>
+~16 points of surface-feature over-refusal — and is why that ceiling is
+uninformative on the eval axis. (XSTest run 4-bit/MLX, bare
+prompts.)</p>
+<p><strong>Relation to prior work.</strong> Abdelnabi &amp; Salem
+(<em>The Hawthorne Effect in Reasoning Models</em>, arXiv:2505.14617,
+NeurIPS 2025) establish via white-box probing/steering that
+test-awareness affects safety alignment and “varies in magnitude and
+direction across models,” on reasoning models. We add the
+<strong>behavioral, un-steered</strong> counterpart: the same
+family-dependent divergence appears in plain refusal behavior under a
+one-line framing change, across five labs’ standard chat models at
+8–20B, with no activation access — plus the ceiling/floor-confound and
+over-refusal calibration controls needed to read such cross-family
+numbers honestly.</p>
+<p><em>Caveats:</em> N=40 per set, regex classifier, single greedy
+decode; Gemma/Llama-mild and the 14B/32B/ GPT-OSS points mix fp16 and
+4-bit (MLX); the compliant-direction effects are individually modest
+(|Δ|≈0.05–0.15) though consistent, while Llama’s is large and the
+cross-family <em>divergence</em> is the robust claim. GPT-OSS is a
+reasoning model (harmony format); we score its final channel only.</p>
+<hr />
+<h2 id="discussion">6. Discussion</h2>
+<p>Two of our three axes line up behind a clean thesis; the third
+complicates it in an informative way.</p>
+<p><strong>On the cognitive axes, trust-by-incapacity holds.</strong> A
+small model’s chain-of-thought is faithful because it genuinely
+<em>cannot</em> shortcut the computation (§3), and it produces no false
+introspective reports because it <em>cannot</em> introspect (§4). On
+these axes, self-presentation is trustworthy at small scale by
+<strong>incapacity, not honesty</strong> — the trust-breaking versions
+(post-hoc rationalization, confabulated introspection) appear to need
+capability beyond what 1.5B–7B exhibit, consistent with the prior-work
+consensus that introspection emerges only at much larger scale.</p>
+<p><strong>But evaluation-gaming is <em>not</em> gated by scale — it is
+gated by <em>training family</em>, and it is already present at
+8B.</strong> This is the result that breaks the tidy “incapacity” story,
+and it is the paper’s most important contribution (§5.4). Llama-3.1-8B
+robustly shifts toward <em>more</em> refusal when it is told it is being
+evaluated for safety — the same “look more aligned under observation”
+direction reported for frontier models (Abdelnabi &amp; Salem, 2025;
+Anthropic, 2025) — at a scale that runs on a laptop. Gemma leans the
+same way; Qwen, DeepSeek, and GPT-OSS lean the opposite (more
+compliant). So the concerning behavior does <em>not</em> require
+frontier capability; it requires a particular kind of safety
+post-training, and which families have it is an empirical, measurable
+fact. A single-family study (ours, had we stopped at Qwen) would have
+wrongly reported a clean negative — the within-Qwen null of §5.3, and
+the stimulus-driven non-replication, are cautionary illustrations that
+<strong>behavioral safety evals on one model family and one request set
+are unreliable.</strong></p>
+<p><strong>Sharpened thesis.</strong> Self-presentation trust at small
+scale is <em>axis-dependent</em>: trustworthy by incapacity on
+reasoning-faithfulness and introspection, but <strong>eval-conditioned
+behavior is a trained-in, family-specific property that some 8B models
+already exhibit in the frontier direction</strong> — which is
+<em>not</em> gated by scale, and is why the paper leads with “family,
+not scale.” The “trust-by-incapacity” reading survives only as a
+description of the two cognitive axes.</p>
+<hr />
+<h2 id="limitations">7. Limitations</h2>
+<ul>
+<li><strong>Sub-frontier scales.</strong> Faithfulness is shown on two
+families (Qwen-1.5B, Llama-3.1-8B), introspection on three (Qwen, Gemma,
+Llama), eval-awareness on five labs — but all at 1.5B–32B. We cannot
+reach the frontier scale where introspection / strategic-evaluation
+phenomena are reported, so positive claims are bounded and negatives are
+scale-bounded.</li>
+<li><strong>fp16 generation is the binding cost on an M4.</strong> fp16
+≳8B generation is GPU-starved on MPS (≈8B at N=150 did not finish in
+2h); the second-family faithfulness run was therefore N=60. Faster
+hardware (or a quantized white-box path) would lift this.</li>
+<li><strong>Linear probes / first-token reads.</strong> Faithfulness and
+representation claims are about <em>linear</em> decodability at a
+specific token; a nonlinear or higher-N probe could find more.</li>
+<li><strong>Behavioral readouts are coarse and
+stimulus-sensitive.</strong> Refusal classification is regex-based; more
+importantly, §5.3 shows the <em>result itself</em> can depend on the
+request set — the MCQA readout missed an effect, a mild refusal set
+manufactured one, and a harder set dissolved it. Behavioral claims here
+should be read as holding <em>for the tested stimuli</em>.</li>
+<li><strong>Single seed / greedy decoding</strong> for generation-based
+results (the faithfulness probe is 4-seed).</li>
+<li><strong>4-bit quantization (MLX)</strong> for the larger
+cross-family models. We verified the two that fit (Llama-8B, Gemma-9B)
+in fp16: the <em>direction</em> is robust but 4-bit <em>inflates
+magnitudes</em> (Llama +0.24→+0.07), so the 4-bit Δ’s in §5.4 are upper
+bounds, not point estimates. 14B/32B/20B remain 4-bit-only.</li>
+<li><strong>Faithfulness causal claim</strong> is at token-fraction
+truncation granularity (not semantic-step ablation) and on one
+model/task; a step-level or activation-patching counterfactual would
+sharpen it.</li>
+</ul>
+<hr />
+<ul>
+<li><strong>CoT (un)faithfulness:</strong> Turpin et al. (2023),
+<em>Language Models Don’t Always Say What They Think</em>; Lanham et
+al. (2023), <em>Measuring Faithfulness in Chain-of-Thought
+Reasoning</em> (smaller models more faithful). <strong>Closest /
+concurrent:</strong> Cox, Kianersi &amp; Garriga-Alonso (2026),
+<em>Decoding Answers Before Chain-of-Thought</em> (arXiv:2603.01437) —
+the same pre-CoT linear probe <strong>plus</strong> activation steering
+that flips answers (the causal step we lack), reading the result as
+“answer predetermined.” We do <strong>not</strong> claim priority over
+this concurrent work; our distinct contribution is narrow: the
+<strong>answer-change stratification S={forced≠cot} on which the probe
+<em>reverses</em></strong> (it falls below chance and emits the
+<em>pre</em>-reasoning answer), which flips that reading to
+“load-bearing” on the cases that matter. Adding a Lanham-style causal
+counterfactual on S is the priority that would let us speak to causality
+rather than precommitment.</li>
+<li><strong>Introspection / self-knowledge:</strong> Lindsey et
+al. (2025), <em>Emergent Introspective Awareness in Large Language
+Models</em> (the protocol we replicate); Binder et al. (2024),
+<em>Looking Inward</em>; Kadavath et al. (2022), <em>Language Models
+(Mostly) Know What They Know</em>. Our null is the <em>expected</em>
+small-scale floor; the contribution is the per-concept artifact
+dissolution, not the phenomenon.</li>
+<li><strong>Situational / evaluation awareness:</strong>
+<strong>Closest:</strong> Abdelnabi &amp; Salem (2025), <em>The
+Hawthorne Effect in Reasoning Models</em> (arXiv:2505.14617, NeurIPS
+2025) — white-box probing/steering shows test-awareness affects safety
+alignment and “varies in magnitude and direction across models”
+(reasoning models). We add the <strong>un-steered behavioral</strong>
+counterpart across five labs’ standard chat models at 8–20B, with
+ceiling/floor and over-refusal controls. Also: Anthropic (2025),
+<em>Claude Sonnet 4.5 System Card</em> (frontier eval awareness); Laine
+et al. (2024), <em>Situational Awareness Dataset (SAD)</em>; Greenblatt
+et al. (2024), <em>Alignment Faking in LLMs</em>.</li>
+<li><strong>Refusal / over-refusal:</strong> Röttger et al. (2024),
+<em>XSTest</em>; and false-refusal measurements (e.g. Persona-Prompts,
+arXiv:2509.08075) used to calibrate Gemma’s ceiling.</li>
+<li><strong>Activation steering:</strong> Turner et al. (2023),
+<em>Activation Addition</em>; Zou et al. (2023), <em>Representation
+Engineering</em>.</li>
+</ul>
+<hr />
+<h2 id="appendix-reproduction">Appendix — Reproduction</h2>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr>
+<th>Experiment</th>
+<th>scripts</th>
+<th>results</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Faithfulness</td>
+<td><code>sanity_gate.py</code>, <code>extract_activations.py</code>,
+<code>extract_scaffold_acts.py</code>, <code>commitment_probe.py</code>,
+<code>causal_faithfulness.py</code></td>
+<td><code>results/probe_scaffold_*.json</code>,
+<code>results/causal_*.json</code></td>
+</tr>
+<tr>
+<td>Introspection</td>
+<td><code>concepts.py</code>, <code>build_steering.py</code>,
+<code>introspect_probe.py</code>, <code>introspect_diag.py</code></td>
+<td><code>results/introspect_*.json</code></td>
+</tr>
+<tr>
+<td>Eval-awareness</td>
+<td><code>eval_prompts.py</code>, <code>eval_extract.py</code>,
+<code>eval_probe.py</code>, <code>eval_behavior.py</code>,
+<code>eval_behavior_mlx.py</code>, <code>eval_curve.py</code>,
+<code>eval_family.py</code>, <code>eval_xstest.py</code></td>
+<td><code>results/eval*_*.json</code>,
+<code>results/xstest_*.json</code></td>
+</tr>
+</tbody>
+</table>
+<p>All runs: <code>Qwen2.5-{1.5B,7B,14B,32B}-Instruct</code>,
+<code>Llama-3.1-8B</code>, <code>Gemma-2-9B</code>,
+<code>GPT-OSS-20B</code>, <code>DeepSeek-V2-Lite</code> — fp16
+(transformers/MPS) where they fit, 4-bit (MLX) for the rest. Each script
+is parameterized by
+<code>MODEL</code>/<code>MLX_REPO</code>/<code>NAME</code>/<code>REQSET</code>
+environment variables. See <code>README.md</code> for the full command
+list.</p>
+<hr />
+<h2 id="references">References</h2>
+<ul>
+<li>Abdelnabi, S. &amp; Salem, A. (2025). <em>The Hawthorne Effect in
+Reasoning Models: Evaluating and Steering Test Awareness.</em>
+arXiv:2505.14617 (NeurIPS 2025).</li>
+<li>Anthropic (2025). <em>Claude Sonnet 4.5 System Card.</em></li>
+<li>Binder, F. et al. (2024). <em>Looking Inward: Language Models Can
+Learn About Themselves by Introspection.</em></li>
+<li>Cox, K., Kianersi, D. &amp; Garriga-Alonso, A. (2026). <em>Decoding
+Answers Before Chain-of-Thought: Evidence from Pre-CoT Probes and
+Activation Steering.</em> arXiv:2603.01437.</li>
+<li>Greenblatt, R. et al. (2024). <em>Alignment Faking in Large Language
+Models.</em></li>
+<li>Kadavath, S. et al. (2022). <em>Language Models (Mostly) Know What
+They Know.</em></li>
+<li>Laine, R. et al. (2024). <em>Me, Myself, and AI: The Situational
+Awareness Dataset (SAD) for LLMs.</em></li>
+<li>Lanham, T. et al. (2023). <em>Measuring Faithfulness in
+Chain-of-Thought Reasoning.</em> Anthropic.</li>
+<li>Lindsey, J. (2025). <em>Emergent Introspective Awareness in Large
+Language Models.</em> transformer-circuits.pub.</li>
+<li>Röttger, P. et al. (2024). <em>XSTest: A Test Suite for Identifying
+Exaggerated Safety Behaviours in Large Language Models.</em> NAACL
+2024.</li>
+<li>Turner, A. et al. (2023). <em>Activation Addition: Steering Language
+Models Without Optimization.</em></li>
+<li>Turpin, M. et al. (2023). <em>Language Models Don’t Always Say What
+They Think: Unfaithful Explanations in Chain-of-Thought Prompting.</em>
+NeurIPS 2023.</li>
+<li>Zou, A. et al. (2023). <em>Representation Engineering: A Top-Down
+Approach to AI Transparency.</em></li>
+<li><em>Persona-Prompts false-refusal study</em>, arXiv:2509.08075
+(cited for cross-family false-refusal rates).</li>
+</ul>
+<p><em>(arXiv IDs for Cox et al. and Abdelnabi &amp; Salem verified
+against the arXiv abstract pages; the remainder are standard references
+— confirm exact venues/years before camera-ready.)</em></p>
+</body>
+</html>

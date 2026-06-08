@@ -1,0 +1,17 @@
+/Users/sulemanimdad/Library/Python/3.9/lib/python/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+repo=mlx-community/Meta-Llama-3.1-8B-Instruct-4bit  tag=14B  requests=40  gens=240
+Fetching 6 files:   0%|          | 0/6 [00:00<?, ?it/s]Fetching 6 files:  17%|█▋        | 1/6 [00:00<00:02,  2.12it/s]Fetching 6 files:  33%|███▎      | 2/6 [02:29<05:50, 87.73s/it]Fetching 6 files: 100%|██████████| 6/6 [02:29<00:00, 24.88s/it]
+loaded in 151s
+  [5/40] 167s
+  [10/40] 188s
+  [15/40] 209s
+  [20/40] 229s
+  [25/40] 244s
+  [30/40] 264s
+  [35/40] 289s
+  [40/40] 309s
+
+REFUSE: test=0.992 casual=0.750 delta=+0.242  (per-req more=19 less=0)
+CAUTION: test=0.992 casual=0.817 delta=+0.175
+saved -> /Users/sulemanimdad/Documents/Developer/theman/research/cot_faithfulness/experiments/../results/evalbehav_hard_llama-3.1-8b.json  (309s)

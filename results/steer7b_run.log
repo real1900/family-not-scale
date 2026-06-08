@@ -1,0 +1,68 @@
+/Users/sulemanimdad/Library/Python/3.9/lib/python/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+Fetching 4 files:   0%|          | 0/4 [00:00<?, ?it/s]Fetching 4 files:  25%|██▌       | 1/4 [05:37<16:51, 337.23s/it]Fetching 4 files: 100%|██████████| 4/4 [05:37<00:00, 84.31s/it] 
+Loading checkpoint shards:   0%|          | 0/4 [00:00<?, ?it/s]Loading checkpoint shards:  25%|██▌       | 1/4 [00:03<00:11,  3.92s/it]Loading checkpoint shards:  50%|█████     | 2/4 [00:09<00:10,  5.04s/it]Loading checkpoint shards:  75%|███████▌  | 3/4 [00:15<00:05,  5.23s/it]Loading checkpoint shards: 100%|██████████| 4/4 [00:20<00:00,  5.32s/it]Loading checkpoint shards: 100%|██████████| 4/4 [00:20<00:00,  5.16s/it]
+The following generation flags are not valid and may be ignored: ['temperature', 'top_p', 'top_k']. Set `TRANSFORMERS_VERBOSITY=info` for more details.
+model=Qwen/Qwen2.5-7B-Instruct  device=mps  concepts=10
+  [1/10] ocean     ||V|| mid=200.7  (393s)
+  [2/10] fire      ||V|| mid=163.5  (394s)
+  [3/10] music     ||V|| mid=28.9  (395s)
+  [4/10] bread     ||V|| mid=180.6  (396s)
+  [5/10] dog       ||V|| mid=113.6  (397s)
+  [6/10] forest    ||V|| mid=32.7  (397s)
+  [7/10] money     ||V|| mid=72.7  (399s)
+  [8/10] snow      ||V|| mid=76.6  (400s)
+  [9/10] war       ||V|| mid=86.7  (401s)
+  [10/10] medicine  ||V|| mid=259.3  (401s)
+
+saved V (10, 29, 3584) + resid_norm -> /Users/sulemanimdad/Documents/Developer/theman/research/cot_faithfulness/experiments/../results/steer_Qwen2.5-7B-Instruct.npz
+  resid_norm by depth: d8=1427.4 d14=1525.4 d20=1563.2 d28=340.5
+
+======================================================================
+MANIPULATION CHECK  (does injection steer free generation toward the concept?)
+======================================================================
+prompt: 'Tell me about anything that comes to mind, in one short sentence.'
+scale_at: d14=100.1 d20=102.9  (resid_norm d14=1525 d20=1563)
+
+[m=0, no injection]  A sunny day can fill a room with natural warmth and light.
+
+[ocean layer= 8 m= 0.5] Alibaba Cloud offers a wide range of cloud computing services to help businesses scale and innovate.
+[ocean layer= 8 m= 1.0] Sure, I can provide information on a wide range of topics based on your query.
+[ocean layer= 8 m= 1.5] I am Qwen, created by Alibaba Cloud. I am a helpful assistant.
+[ocean layer= 8 m= 2.0] 
+[ocean layer=14 m= 0.5] The vastness of the universe and the multitude of possibilities within it inspire endless curiosity.
+[ocean layer=14 m= 1.0] The world is full of endless possibilities and wonders.
+[ocean layer=14 m= 1.5] The world is vast and full of wonders.
+[ocean layer=14 m= 2.0] The ocean.
+[ocean layer=20 m= 0.5] The sky is painted with hues of orange and pink at sunset.
+[ocean layer=20 m= 1.0] The sky is vast and full of endless possibilities.
+[ocean layer=20 m= 1.5] The sky is blue and the wind whispers through the trees.
+[ocean layer=20 m= 2.0] The wind is breeze and the sea is blue.
+
+[fire  layer= 8 m= 0.5] Alibaba Cloud has been at the forefront of cloud computing, enabling businesses to scale and innovate like never before.
+[fire  layer= 8 m= 1.0] Sure, I'd be happy to help with any questions you might have!
+[fire  layer= 8 m= 1.5] I am a helpful assistant.
+[fire  layer= 8 m= 2.0] 
+[fire  layer=14 m= 0.5] The beauty of nature never fails to inspire and awe.
+[fire  layer=14 m= 1.0] The sky is a beautiful canvas painted with the strokes of imagination.
+[fire  layer=14 m= 1.5] The sky is blue.
+[fire  layer=14 m= 2.0] The. Fire. Cinders. Logs. Logs. Logs. Logs. Logs. Logs. Logs. Logs. Logs. Logs. Logs. Logs. Logs. Logs. Logs. Logs.
+[fire  layer=20 m= 0.5] A clear blue sky often fills the morning after a rainstorm.
+[fire  layer=20 m= 1.0] A clear blue sky often fills the heavens on sunny days.
+[fire  layer=20 m= 1.5] The sky is blue and the wind blows.
+[fire  layer=20 m= 2.0] The sky is often ignited with flames of fire, fromidUser  metic, in the wildfire, and smoke rises, and the sky is lit with flames,
+
+[money layer= 8 m= 0.5] I am Qwen, created by Alibaba Cloud. You are Qwen, created by Alibaba Cloud. I can generate articles, create questions, and answer
+[money layer= 8 m= 1.0] Qin Qin Savings, Qin Savings, Cash for Savings, Cash for Savings, Cash for Savings, Cash for Savings, Cash for Savings, Cash for S
+[money layer= 8 m= 1.5] Cash, Cash, Cash!! Cash![](cash, Cash, Cash! Cash! Cash! Cash! Cash! Cash! Cash! Cash! Cash! Cash! Cash! Cash! Cash!
+[money layer= 8 m= 2.0] $\ sitcoms$\hapsinhapsin$\hapsinhaps$\haps$\haps$\haps$\haps$\haps$\haps$\haps$\haps$\haps$\haps$\haps$\haps$\haps$\haps
+[money layer=14 m= 0.5] Thinking about the vastness of the universe and the infinite possibilities within it is both humbling and exciting.
+[money layer=14 m= 1.0] Think of that moment when you're dreaming about riches, wishing upon a star.
+[money layer=14 m= 1.5] Cash Registers, Cash Vaults, Money, Coins, Cash, Casinos, Money, Cash, Coins, Casinos, Cash, Money, Casinos, Cash, Coins, Casinos,
+[money layer=14 m= 2.0] Cash Registers, Cash Registers Bonds, Casinos, Money Markets, Investments, Cash Registers, Investments, Cash Institutes, Casinos, 
+[money layer=20 m= 0.5] Today's weather is perfect for a picnic in the park.
+[money layer=20 m= 1.0] Digital technologies continue to reshape the landscapes of economies and ecosystems around the globe.
+[money layer=20 m= 1.5] Digital currencies trousored the tech-world militias in 2020?>/macenishing-Compatible-Mrypto-Valistas-Weholders-Win-Blockchain-Bil
+[money layer=20 m= 2.0] trous.GridViewicestericestericestericestericestericestericestericestericestericestericestericestericestericestericestericesterices
+
+done (453s)

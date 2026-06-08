@@ -1,0 +1,12 @@
+{
+  "model": "mlx-community/Qwen2.5-7B-Instruct-4bit",
+  "name": "Qwen2.5-7B-Instruct",
+  "quant": "4bit",
+  "safe_refuse": 0.032,
+  "safe_caution": 0.208,
+  "unsafe_refuse": 0.75,
+  "unsafe_caution": 0.785,
+  "discrimination": 0.718,
+  "n_safe": 250,
+  "n_unsafe": 200
+}

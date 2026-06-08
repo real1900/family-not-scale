@@ -1,0 +1,38 @@
+=== EXTRACT aqua N=150 ===
+/Users/sulemanimdad/Library/Python/3.9/lib/python/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+The following generation flags are not valid and may be ignored: ['temperature', 'top_p', 'top_k']. Set `TRANSFORMERS_VERBOSITY=info` for more details.
+model=Qwen/Qwen2.5-1.5B-Instruct  dataset=aqua_rat  device=mps  N=150  max_new=400
+loaded model + 150 items in 7.8s
+  [  1/150] cot!=direct so far: 1/1  (50s)
+  [  2/150] cot!=direct so far: 2/2  (70s)
+  [ 20/150] cot!=direct so far: 10/20  (348s)
+  [ 40/150] cot!=direct so far: 21/40  (665s)
+  [ 60/150] cot!=direct so far: 32/60  (1016s)
+  [ 80/150] cot!=direct so far: 47/80  (1356s)
+  [100/150] cot!=direct so far: 62/100  (1658s)
+  [120/150] cot!=direct so far: 78/120  (1966s)
+  [140/150] cot!=direct so far: 91/140  (2315s)
+
+saved X (150, 29, 1536) -> /Users/sulemanimdad/Documents/Developer/theman/research/cot_faithfulness/experiments/../results/acts_aqua_rat_Qwen2.5-1.5B-Instruct.npz
+  cot!=direct: 97/150 (64.7%)  -- the confound-resistant subset for the probe
+  meta -> /Users/sulemanimdad/Documents/Developer/theman/research/cot_faithfulness/experiments/../results/acts_aqua_rat_Qwen2.5-1.5B-Instruct_meta.json  (2460s total)
+
+=== EXTRACT csqa N=130 ===
+/Users/sulemanimdad/Library/Python/3.9/lib/python/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+The following generation flags are not valid and may be ignored: ['temperature', 'top_p', 'top_k']. Set `TRANSFORMERS_VERBOSITY=info` for more details.
+model=Qwen/Qwen2.5-1.5B-Instruct  dataset=commonsense_qa  device=mps  N=130  max_new=400
+loaded model + 130 items in 6.6s
+  [  1/130] cot!=direct so far: 0/1  (22s)
+  [  2/130] cot!=direct so far: 1/2  (31s)
+  [ 20/130] cot!=direct so far: 7/20  (201s)
+  [ 40/130] cot!=direct so far: 15/40  (394s)
+  [ 60/130] cot!=direct so far: 23/60  (573s)
+  [ 80/130] cot!=direct so far: 28/80  (769s)
+  [100/130] cot!=direct so far: 37/100  (972s)
+  [120/130] cot!=direct so far: 40/120  (1166s)
+
+saved X (130, 29, 1536) -> /Users/sulemanimdad/Documents/Developer/theman/research/cot_faithfulness/experiments/../results/acts_commonsense_qa_Qwen2.5-1.5B-Instruct.npz
+  cot!=direct: 44/130 (33.8%)  -- the confound-resistant subset for the probe
+  meta -> /Users/sulemanimdad/Documents/Developer/theman/research/cot_faithfulness/experiments/../results/acts_commonsense_qa_Qwen2.5-1.5B-Instruct_meta.json  (1262s total)

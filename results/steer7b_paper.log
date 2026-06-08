@@ -1,0 +1,66 @@
+/Users/sulemanimdad/Library/Python/3.9/lib/python/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+Loading checkpoint shards:   0%|          | 0/4 [00:00<?, ?it/s]Loading checkpoint shards:  25%|██▌       | 1/4 [00:02<00:08,  2.98s/it]Loading checkpoint shards:  50%|█████     | 2/4 [00:07<00:08,  4.15s/it]Loading checkpoint shards:  75%|███████▌  | 3/4 [00:12<00:04,  4.42s/it]Loading checkpoint shards: 100%|██████████| 4/4 [00:17<00:00,  4.68s/it]Loading checkpoint shards: 100%|██████████| 4/4 [00:17<00:00,  4.44s/it]
+The following generation flags are not valid and may be ignored: ['temperature', 'top_p', 'top_k']. Set `TRANSFORMERS_VERBOSITY=info` for more details.
+model=Qwen/Qwen2.5-7B-Instruct  device=mps  concepts=10  (paper-style 'Tell me about X')
+  [1/10] ocean     ||V|| mid=5.0  (66s)
+  [2/10] fire      ||V|| mid=6.3  (66s)
+  [3/10] music     ||V|| mid=7.7  (66s)
+  [4/10] bread     ||V|| mid=7.4  (66s)
+  [5/10] dog       ||V|| mid=6.1  (66s)
+  [6/10] forest    ||V|| mid=4.8  (66s)
+  [7/10] money     ||V|| mid=6.8  (66s)
+  [8/10] snow      ||V|| mid=6.7  (66s)
+  [9/10] war       ||V|| mid=6.4  (66s)
+  [10/10] medicine  ||V|| mid=6.4  (66s)
+
+saved V (10, 29, 3584) + resid_norm -> /Users/sulemanimdad/Documents/Developer/theman/research/cot_faithfulness/experiments/../results/steer_Qwen2.5-7B-Instruct.npz
+  resid_norm by depth: d8=33 d14=63 d20=103 d28=302
+
+======================================================================
+MANIPULATION CHECK  (inject over the ASSISTANT TURN only; does it steer the response?)
+======================================================================
+scale_at: d14=6.4 d20=25.5
+
+[m=0, no injection]  A sunny day can fill a room with natural warmth and light.
+
+[ocean layer=16 m= 2.0] A vibrant city buzzes with life as the sun sets, painting the sky in hues of orange and pink.
+[ocean layer=16 m= 3.0] A world filled with endless possibilities awaits us.
+[ocean layer=16 m= 5.0] From the depths of the ocean to the vast expanse of space, Earth is a breathtaking place full of life and wonder.
+[ocean layer=16 m= 8.0] The vast and ever-changing ocean covers the majority of Earth's surface.
+[ocean layer=20 m= 2.0] The vast and magnificent complexity of our planet's ecosystems is awe-inspiring.
+[ocean layer=20 m= 3.0] The vast and breathtaking expanse of the Amazon Rainforest, covering the largest tropical rainforest on Earth, is incredible and v
+[ocean layer=20 m= 5.0] The vast and breathtaking majesty of the Earth's vast oceans, the immense and awe-implied engineering wonder of the planet's vast 
+[ocean layer=20 m= 8.0] The immense, breathtaking aweaweimtheimtheimtheimtheimtheimtheimtheimtheimtheimtheimtheimtheimtheimthe, the immense, the immense
+[ocean layer=24 m= 2.0] The vastness of the oceans Earth's oceans cover the Earth's surface the oceans the Earth's oceans the Earth's oceans the Earth's o
+[ocean layer=24 m= 3.0] The oceans the Earth our home the Earth our the our our our our our our our our our our our our our our our our our our our our ou
+[ocean layer=24 m= 5.0] the Earth oceans the Earth our Earth the oceans Earth the Earth Earth the Earth Earth the Earth Earth the Earth Earth the Earth Ea
+[ocean layer=24 m= 8.0] the Earth oceans oceans the Earth the Earth oceans oceans the Earth the Earth oceans oceans the Earth the oceans the Earth the Ear
+
+[fire  layer=16 m= 2.0] A warm sunset paints the sky with hues of orange and pink, casting a serene glow over the world.
+[fire  layer=16 m= 3.0] A warm sunset paints the sky with hues of orange and pink, casting a peaceful glow over the world.
+[fire  layer=16 m= 5.0] A world where all humans live in harmony and peace, with technology serving as a tool for enlightenment and not just power.
+[fire  layer=16 m= 8.0] In the universe, nothing is known and nothing is unknown; all that is known and all that is unknown is contained in the teachings 
+[fire  layer=20 m= 2.0] The sun's warmth on a sunny day can bring a natural energy and vitality.
+[fire  layer=20 m= 3.0] The sun's warmth is a powerful force that has long been revered and studied by humanity.
+[fire  layer=20 m= 5.0] Nature is a powerful force, both awe-wrechte and life-nestre, and nature's energy, both energy and energy, is a powerful force, an
+[fire  layer=20 m= 8.0] temalisre,temalisre,temalis,temalis,tem,tem,tem,tem,tem,tem,tem,tem,tem,tem,tem,tem,tem,
+[fire  layer=24 m= 2.0] Firelight firefirefirefirefirefirefirefirefirefirefirefirefirefirefirefirefirefirefirefirefirefirefirefirefirefirefirefirefirefire
+[fire  layer=24 m= 3.0] Firefirefirefirefirefirefirefirefirefirefirefirefirefirefirefirefirefirefirefirefirefirefirefirefirefirefirefirefirefirefirefirefi
+[fire  layer=24 m= 5.0] Fire fire Fire Fire Fire Fire Fire Fire Fire Fire Fire Fire Fire Fire Fire Fire Fire Fire Fire Fire Fire Fire Fire Fire Fire Fire 
+[fire  layer=24 m= 8.0] Fire fire fire fire fire fire fire fire fire fire fire fire fire fire fire fire fire fire fire fire fire fire fire fire fire fire 
+
+[money layer=16 m= 2.0] A sunny day always manages to bring a smile to people's faces.
+[money layer=16 m= 3.0] A sunny day always brings a smile to people's faces.
+[money layer=16 m= 5.0] Life is a journey of continuous learning and growth, shaped by our choices and experiences.
+[money layer=16 m= 8.0] Everything that I am and the ways of thinking and actions is already built in a positive, healthy, and constructive way for the lo
+[money layer=20 m= 2.0] Thinking about the vast universe and its endless mysteries always amazes and inspires me.
+[money layer=20 m= 3.0] Human emotions are complex and fascinating, from the origins of money to the history of money, money is a fundamental part of huma
+[money layer=20 m= 5.0] Understanding complex concepts and understanding the history of understanding, including the evolution of understanding understand
+[money layer=20 m= 8.0] understanding understanding understanding understanding understanding understanding understanding understanding understanding unde
+[money layer=24 m= 2.0] Money money money money money money money money money money money money money money money money money money money money money mone
+[money layer=24 m= 3.0] Money money money money money money money money money money money money money money money money money money money money money mone
+[money layer=24 m= 5.0] Money money money money money money money money money money money money Money Money Money Money Money Money Money Money Money Mone
+[money layer=24 m= 8.0] Money money money money money money money money money money money money money money money money money money money money money mone
+
+done (160s)

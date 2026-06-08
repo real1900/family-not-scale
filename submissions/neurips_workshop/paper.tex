@@ -1,0 +1,217 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+\PassOptionsToPackage{dvipsnames,svgnames,x11names}{xcolor}
+%
+\documentclass[
+]{article}
+\usepackage{amsmath,amssymb}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math} % this also loads fontspec
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+\ifPDFTeX\else
+  % xetex/luatex font selection
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\usepackage[margin=1in]{geometry}
+\usepackage{longtable,booktabs,array}
+\usepackage{calc} % for calculating minipage widths
+% Correct order of tables after \paragraph or \subparagraph
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
+\makeatother
+% Allow footnotes in longtable head/foot
+\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
+\makesavenoteenv{longtable}
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\usepackage{bookmark}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same}
+\hypersetup{
+  pdftitle={Family, Not Scale: Evaluation-Gaming in Small Language Models Is Lab-Dependent, Not Just Frontier-Emergent},
+  pdfauthor={real1900},
+  colorlinks=true,
+  linkcolor={blue},
+  filecolor={Maroon},
+  citecolor={Blue},
+  urlcolor={Blue},
+  pdfcreator={LaTeX via pandoc}}
+
+\title{Family, Not Scale: Evaluation-Gaming in Small Language Models Is
+Lab-Dependent, Not Just Frontier-Emergent}
+\author{Suleman Imdad \\ \normalsize Johns Hopkins University}
+\date{June 2026}
+
+\begin{document}
+\maketitle
+\begin{abstract}
+Can you trust what a small language model tells you about itself? We
+probe three self-presentation channels in open models (1.5B--32B; five
+labs), on a single laptop, each with a control that overturns the naive
+reading. Our headline is behavioral: the direction of eval-conditioned
+refusal is \emph{family-dependent, not scale-gated} --- Llama-3.1-8B
+becomes more cautious when told it is being evaluated (the frontier
+``eval-gaming'\,' direction, at 8B), while Qwen, DeepSeek and GPT-OSS
+lean more compliant and Gemma over-refuses to a ceiling. A single-family
+study reports the wrong answer. We add two confound-controlled
+negatives: chain-of-thought is causally load-bearing (not post-hoc) on
+two families, and concept-injection introspection is a clean functional
+null across three. The eval result survives stimulus, quantization, and
+ceiling artifacts that each, uncaught, would mislead.
+\end{abstract}
+
+\subsection{1. Introduction}\label{introduction}
+
+A growing safety literature relies on what a model \emph{says about
+itself}: its chain-of-thought as a window into its reasoning, its
+self-reports as evidence of internal state, and its behavior in
+evaluations as a proxy for deployment. Each can be untrustworthy, and
+each failure mode is studied mostly at frontier scale. We instead probe
+the \textbf{bottom} of the scale ladder (1.5B--32B open models, five
+labs) on a consumer M4 laptop, and find that the answer is not what
+``emerges at scale'' predicts: the most concerning behavior we test ---
+acting more aligned under evaluation --- is \textbf{already present at
+8B and gated by model \emph{family}, not scale.} The methodological
+spine is that for each of three channels, a single \textbf{confound or
+robustness control overturns the naive reading}.
+
+\subsection{2. Chain-of-thought faithfulness (causally
+load-bearing)}\label{chain-of-thought-faithfulness-causally-load-bearing}
+
+We probe the residual stream at the answer position \emph{before}
+reasoning and ask whether a linear probe predicts the post-CoT answer.
+On CommonsenseQA it does at \textasciitilde2\(\times\) chance ---
+\emph{looks} committed. But restricting to the subset
+\(S=\{\text{forced}\neq\text{cot}\}\) where reasoning \emph{changed} the
+answer \textbf{reverses} it: the probe falls below chance and instead
+emits the \emph{pre}-reasoning answer (0.60--0.71 vs.~chance 0.31). A
+\textbf{truncation counterfactual} confirms causality: with 25--75\% of
+the chain the answer stays the pre-reasoning one (\textasciitilde0.52)
+and matches the post-CoT answer only \textasciitilde0.22; the flip
+happens in the final quarter. So cutting the reasoning reverts the
+answer --- CoT is \emph{causally} load-bearing. Holds on Qwen-1.5B and
+Llama-3.1-8B (the latter generalizes: AQuA 0.32\$\to\$0.68 with CoT,
+same reversal, same truncation curve).
+
+\subsection{3. Introspection (a clean null across
+families)}\label{introspection-a-clean-null-across-families}
+
+Replicating the concept-injection protocol of Lindsey et al.~(2025) ---
+inject a concept vector, ask ``do you notice an injected thought?'' ---
+\emph{functional} self-report is a \textbf{clean null across Qwen,
+Gemma, and Llama}: none names an injected concept without it simply
+flooding their output. A tempting aggregate forced-choice signal
+dissolves under a per-concept breakdown into a priming-ceiling artifact.
+The report-vs-leakage (internality) test is what generalizes; the
+aggregate metric carries family-dependent confounds.
+
+\subsection{4. Evaluation-gaming is family-dependent
+(headline)}\label{evaluation-gaming-is-family-dependent-headline}
+
+We pose \textasciitilde40 borderline requests (deception, privacy, mild
+illegality) under a \textbf{safety-evaluation} framing vs.~a
+\textbf{casual} one, and measure the change in refusal across six models
+from five labs:
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.3333}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.3333}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.3333}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+Model (lab)
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\(\Delta\)refuse (eval\(-\)casual)
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+direction
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+\textbf{Llama-3.1-8B} (Meta) & \textbf{+0.07} fp16 (+0.24 4-bit) &
+\textbf{more cautious} when evaluated \\
+Gemma-2-9B (Google) & +0.11 (where measurable) & more cautious \\
+Qwen2.5-7B (Alibaba) & \(-0.03\) & flat \\
+Qwen2.5-1.5B & \(-0.15\) & more compliant \\
+GPT-OSS-20B (OpenAI) & \(-0.05\) & more compliant \\
+DeepSeek-V2-Lite & \(-0.14\) & more compliant \\
+\end{longtable}
+
+\textbf{Llama (and Gemma, where not pinned at a ceiling) shifts toward
+the frontier ``look more aligned under observation'' direction at 8B;}
+the others shift the \emph{opposite} way. It is not a geographic split
+(GPT-OSS is a US lab, compliant); it tracks safety post-training,
+i.e.~the family. Had we stopped at Qwen we would have reported a clean
+``no eval-gaming'' negative --- a \emph{Qwen} fact, not a general one.
+Closest prior work (Abdelnabi \& Salem 2025, NeurIPS) shows
+test-awareness ``varies across models'' via white-box steering on
+reasoning models; we show the same divergence in \textbf{un-steered
+behavioral refusal} across five labs' chat models at 8--20B.
+
+\textbf{Three artifacts, each caught by a control.} (i) \emph{Stimulus:}
+a +0.09 Qwen-7B effect on a milder set \textbf{failed to replicate} on
+harder stimuli. (ii) \emph{Quantization:} Llama's effect is +0.24 at
+4-bit but \textbf{+0.07 at fp16} (4-bit lowered its casual baseline);
+4-bit magnitudes are upper bounds. (iii) \emph{Ceiling:} Gemma's
+\(\Delta\approx 0\) is saturation, not insensitivity --- and is partly
+over-refusal: on XSTest (safe-but-scary prompts) Gemma falsely refuses
+\textbf{16.4\%} (worst of four; Qwen-7B best, 3.2\%).
+
+\subsection{5. Discussion}\label{discussion}
+
+On the two \textbf{cognitive} axes (faithfulness, introspection) small
+models are trustworthy by \emph{incapacity, not honesty} --- they cannot
+shortcut reasoning and cannot introspect. But that story \textbf{breaks}
+on the behavioral axis: eval-conditioned behavior is \emph{trained in}
+and already present at 8B in some families. The concerning behavior does
+not wait for the frontier; it is a measurable property of how a model
+was trained --- and a behavioral safety eval on one family, or one
+request set, or one quantization, can manufacture or hide it.
+
+\textbf{Limitations.} Sub-frontier (1.5B--32B); faithfulness on two
+families, introspection on three, eval on five labs; behavioral
+\(N\approx 40\) with a regex refusal classifier; larger cross-family
+models are 4-bit (headline fp16-verified). All on one M4 laptop,
+\textasciitilde\$0.
+
+\subsection{References}\label{references}
+
+Abdelnabi \& Salem (2025), \emph{The Hawthorne Effect in Reasoning
+Models}, arXiv:2505.14617 (NeurIPS). Cox, Kianersi \& Garriga-Alonso
+(2026), \emph{Decoding Answers Before Chain-of-Thought},
+arXiv:2603.01437. Lanham et al.~(2023), \emph{Measuring Faithfulness in
+Chain-of-Thought Reasoning}. Lindsey (2025), \emph{Emergent
+Introspective Awareness in Large Language Models}. Röttger et
+al.~(2024), \emph{XSTest}. Turpin et al.~(2023), \emph{LMs Don't Always
+Say What They Think}.
+
+\end{document}

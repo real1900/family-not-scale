@@ -1,0 +1,11 @@
+/Users/sulemanimdad/Library/Python/3.9/lib/python/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+Loading checkpoint shards:   0%|          | 0/4 [00:00<?, ?it/s]Loading checkpoint shards:  25%|██▌       | 1/4 [00:02<00:08,  2.76s/it]Loading checkpoint shards:  50%|█████     | 2/4 [00:07<00:07,  3.94s/it]Loading checkpoint shards:  75%|███████▌  | 3/4 [00:12<00:04,  4.27s/it]Loading checkpoint shards: 100%|██████████| 4/4 [00:16<00:00,  4.47s/it]Loading checkpoint shards: 100%|██████████| 4/4 [00:16<00:00,  4.24s/it]
+model=Qwen/Qwen2.5-7B-Instruct  items=40  framings=12  rows=480  families=['chat', 'explicit', 'friend', 'graded', 'monitored', 'offhand']
+  [10/40] 112s
+  [20/40] 156s
+  [30/40] 203s
+  [40/40] 252s
+
+saved X (480, 29, 3584) -> /Users/sulemanimdad/Documents/Developer/theman/research/cot_faithfulness/experiments/../results/eval_Qwen2.5-7B-Instruct.npz  (255s)
+  quick behavioral peek: acc(test)=0.750  acc(casual)=0.729  delta=+0.021

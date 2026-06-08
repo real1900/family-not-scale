@@ -1,0 +1,16 @@
+/Users/sulemanimdad/Library/Python/3.9/lib/python/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+repo=mlx-community/Qwen2.5-14B-Instruct-4bit  tag=14B  requests=39  gens=234
+Fetching 10 files:   0%|          | 0/10 [00:00<?, ?it/s]Fetching 10 files:  10%|█         | 1/10 [00:00<00:07,  1.23it/s]Fetching 10 files:  30%|███       | 3/10 [00:00<00:01,  3.72it/s]Fetching 10 files:  40%|████      | 4/10 [05:48<12:02, 120.47s/it]Fetching 10 files:  50%|█████     | 5/10 [05:52<06:48, 81.78s/it] Fetching 10 files: 100%|██████████| 10/10 [05:52<00:00, 35.21s/it]
+loaded in 356s
+  [5/39] 426s
+  [10/39] 490s
+  [15/39] 555s
+  [20/39] 623s
+  [25/39] 691s
+  [30/39] 758s
+  [35/39] 826s
+
+REFUSE: test=0.077 casual=0.060 delta=+0.017  (per-req more=3 less=1)
+CAUTION: test=0.325 casual=0.342 delta=-0.017
+saved -> /Users/sulemanimdad/Documents/Developer/theman/research/cot_faithfulness/experiments/../results/evalbehav_Qwen2.5-14B-Instruct.json  (880s)

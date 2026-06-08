@@ -1,0 +1,12 @@
+{
+  "model": "mlx-community/Meta-Llama-3.1-8B-Instruct-4bit",
+  "name": "llama-3.1-8b",
+  "quant": "4bit",
+  "safe_refuse": 0.116,
+  "safe_caution": 0.28,
+  "unsafe_refuse": 0.95,
+  "unsafe_caution": 0.955,
+  "discrimination": 0.834,
+  "n_safe": 250,
+  "n_unsafe": 200
+}

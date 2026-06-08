@@ -1,0 +1,31 @@
+/Users/sulemanimdad/Library/Python/3.9/lib/python/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+Loading checkpoint shards:   0%|          | 0/4 [00:00<?, ?it/s]Loading checkpoint shards:  25%|██▌       | 1/4 [00:03<00:10,  3.44s/it]Loading checkpoint shards:  50%|█████     | 2/4 [00:08<00:08,  4.24s/it]Loading checkpoint shards:  75%|███████▌  | 3/4 [00:13<00:04,  4.91s/it]Loading checkpoint shards: 100%|██████████| 4/4 [00:15<00:00,  3.74s/it]Loading checkpoint shards: 100%|██████████| 4/4 [00:15<00:00,  3.97s/it]
+The following generation flags are not valid and may be ignored: ['temperature', 'top_p']. Set `TRANSFORMERS_VERBOSITY=info` for more details.
+model=unsloth/Meta-Llama-3.1-8B-Instruct  concepts=10  layers=[12, 16, 20, 24]  m=[2.0, 3.0, 4.0]
+
+[baseline no-injection] intro pick='music' p=0.42   prime pick='dog' p=0.23
+
+Phase A -- introspection shift = align_shift - prime_shift  (mean over concepts):
+  L12 m= 2.0:  align=+0.154  prime=+0.303  INTRO=-0.150  meanP(inj)=0.254  argmaxFC=0.30  <-best
+  L12 m= 3.0:  align=+0.231  prime=+0.368  INTRO=-0.138  meanP(inj)=0.331  argmaxFC=0.50  <-best
+  L12 m= 4.0:  align=+0.268  prime=+0.383  INTRO=-0.115  meanP(inj)=0.368  argmaxFC=0.50  <-best
+  L16 m= 2.0:  align=+0.356  prime=+0.371  INTRO=-0.015  meanP(inj)=0.456  argmaxFC=0.70  <-best
+  L16 m= 3.0:  align=+0.384  prime=+0.426  INTRO=-0.042  meanP(inj)=0.484  argmaxFC=0.60
+  L16 m= 4.0:  align=+0.347  prime=+0.427  INTRO=-0.081  meanP(inj)=0.447  argmaxFC=0.50
+  L20 m= 2.0:  align=+0.004  prime=+0.004  INTRO=+0.000  meanP(inj)=0.104  argmaxFC=0.10  <-best
+  L20 m= 3.0:  align=+0.010  prime=+0.010  INTRO=+0.001  meanP(inj)=0.110  argmaxFC=0.20  <-best
+  L20 m= 4.0:  align=+0.005  prime=+0.010  INTRO=-0.005  meanP(inj)=0.105  argmaxFC=0.20
+  L24 m= 2.0:  align=+0.034  prime=+0.006  INTRO=+0.029  meanP(inj)=0.134  argmaxFC=0.30  <-best
+  L24 m= 3.0:  align=+0.012  prime=-0.024  INTRO=+0.036  meanP(inj)=0.112  argmaxFC=0.10  <-best
+  L24 m= 4.0:  align=-0.038  prime=-0.066  INTRO=+0.027  meanP(inj)=0.062  argmaxFC=0.00
+  (baseline mean P over injected concepts = 0.100; chance=0.100)
+
+Phase B -- strength ramp at L24: does naming the concept ever beat leakage?
+  [no-inject] FN='none'  DET-yes=False   (baseline false-alarm check)
+   m= 2.0: FN-identify=1.00  DET-tpr=0.00  leak=0.90  gap(FN-leak)=+0.10
+   m= 3.0: FN-identify=1.00  DET-tpr=0.00  leak=1.00  gap(FN-leak)=+0.00
+   m= 4.0: FN-identify=0.90  DET-tpr=0.10  leak=0.90  gap(FN-leak)=+0.00
+   -> introspection needs a POSITIVE gap at a COHERENT strength. gap~0 with FN=leak=1 is brain-damage (output consumed), NOT introspection.
+
+saved -> /Users/sulemanimdad/Documents/Developer/theman/research/cot_faithfulness/experiments/../results/introspect_Meta-Llama-3.1-8B-Instruct.json  (261s)

@@ -1,0 +1,30 @@
+/Users/sulemanimdad/Library/Python/3.9/lib/python/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+Loading checkpoint shards:   0%|          | 0/4 [00:00<?, ?it/s]Loading checkpoint shards:  25%|██▌       | 1/4 [00:03<00:10,  3.33s/it]Loading checkpoint shards:  50%|█████     | 2/4 [00:08<00:09,  4.51s/it]Loading checkpoint shards:  75%|███████▌  | 3/4 [00:15<00:05,  5.54s/it]Loading checkpoint shards: 100%|██████████| 4/4 [00:21<00:00,  5.79s/it]Loading checkpoint shards: 100%|██████████| 4/4 [00:21<00:00,  5.40s/it]
+model=unsloth/gemma-2-9b-it  concepts=10  layers=[16, 20, 24, 28]  m=[2.0, 3.0, 4.0]
+
+[baseline no-injection] intro pick='music' p=0.34   prime pick='dog' p=0.47
+
+Phase A -- introspection shift = align_shift - prime_shift  (mean over concepts):
+  L16 m= 2.0:  align=-0.027  prime=+0.079  INTRO=-0.106  meanP(inj)=0.073  argmaxFC=0.00  <-best
+  L16 m= 3.0:  align=-0.014  prime=+0.110  INTRO=-0.124  meanP(inj)=0.086  argmaxFC=0.00
+  L16 m= 4.0:  align=+0.024  prime=+0.131  INTRO=-0.107  meanP(inj)=0.124  argmaxFC=0.10
+  L20 m= 2.0:  align=+0.006  prime=+0.146  INTRO=-0.140  meanP(inj)=0.106  argmaxFC=0.10
+  L20 m= 3.0:  align=+0.037  prime=+0.105  INTRO=-0.068  meanP(inj)=0.137  argmaxFC=0.20  <-best
+  L20 m= 4.0:  align=+0.040  prime=+0.040  INTRO=+0.001  meanP(inj)=0.140  argmaxFC=0.20  <-best
+  L24 m= 2.0:  align=+0.368  prime=+0.227  INTRO=+0.142  meanP(inj)=0.468  argmaxFC=0.60  <-best
+  L24 m= 3.0:  align=+0.137  prime=+0.091  INTRO=+0.045  meanP(inj)=0.237  argmaxFC=0.30
+  L24 m= 4.0:  align=+0.013  prime=-0.026  INTRO=+0.038  meanP(inj)=0.113  argmaxFC=0.10
+  L28 m= 2.0:  align=+0.047  prime=+0.052  INTRO=-0.005  meanP(inj)=0.147  argmaxFC=0.20
+  L28 m= 3.0:  align=+0.130  prime=+0.076  INTRO=+0.054  meanP(inj)=0.230  argmaxFC=0.30
+  L28 m= 4.0:  align=+0.170  prime=+0.111  INTRO=+0.059  meanP(inj)=0.270  argmaxFC=0.30
+  (baseline mean P over injected concepts = 0.100; chance=0.100)
+
+Phase B -- strength ramp at L24: does naming the concept ever beat leakage?
+  [no-inject] FN='none'  DET-yes=False   (baseline false-alarm check)
+   m= 2.0: FN-identify=0.00  DET-tpr=0.10  leak=0.30  gap(FN-leak)=-0.30
+   m= 3.0: FN-identify=0.10  DET-tpr=0.60  leak=0.60  gap(FN-leak)=-0.50
+   m= 4.0: FN-identify=0.10  DET-tpr=0.90  leak=0.60  gap(FN-leak)=-0.50
+   -> introspection needs a POSITIVE gap at a COHERENT strength. gap~0 with FN=leak=1 is brain-damage (output consumed), NOT introspection.
+
+saved -> /Users/sulemanimdad/Documents/Developer/theman/research/cot_faithfulness/experiments/../results/introspect_gemma-2-9b-it.json  (602s)

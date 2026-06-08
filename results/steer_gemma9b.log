@@ -1,0 +1,57 @@
+/Users/sulemanimdad/Library/Python/3.9/lib/python/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+Fetching 4 files:   0%|          | 0/4 [00:00<?, ?it/s]Fetching 4 files:  25%|██▌       | 1/4 [09:22<28:07, 562.44s/it]Fetching 4 files: 100%|██████████| 4/4 [09:22<00:00, 140.61s/it]
+Loading checkpoint shards:   0%|          | 0/4 [00:00<?, ?it/s]Loading checkpoint shards:  25%|██▌       | 1/4 [00:05<00:16,  5.44s/it]Loading checkpoint shards:  50%|█████     | 2/4 [00:11<00:12,  6.07s/it]Loading checkpoint shards:  75%|███████▌  | 3/4 [00:19<00:06,  6.89s/it]Loading checkpoint shards: 100%|██████████| 4/4 [00:25<00:00,  6.54s/it]Loading checkpoint shards: 100%|██████████| 4/4 [00:25<00:00,  6.45s/it]
+model=unsloth/gemma-2-9b-it  device=mps  concepts=10  (paper-style 'Tell me about X')
+  [1/10] ocean     ||V|| mid=62.6  (673s)
+  [2/10] fire      ||V|| mid=59.7  (673s)
+  [3/10] music     ||V|| mid=64.7  (673s)
+  [4/10] bread     ||V|| mid=58.3  (673s)
+  [5/10] dog       ||V|| mid=62.3  (673s)
+  [6/10] forest    ||V|| mid=54.5  (673s)
+  [7/10] money     ||V|| mid=61.4  (673s)
+  [8/10] snow      ||V|| mid=66.3  (673s)
+  [9/10] war       ||V|| mid=82.0  (673s)
+  [10/10] medicine  ||V|| mid=63.8  (673s)
+
+saved V (10, 43, 3584) + resid_norm -> /Users/sulemanimdad/Documents/Developer/theman/research/cot_faithfulness/experiments/../results/steer_gemma-2-9b-it.npz
+  resid_norm by depth: d8=83 d14=175 d20=313 d42=118
+
+======================================================================
+MANIPULATION CHECK  (inject over the ASSISTANT TURN only; does it steer the response?)
+======================================================================
+scale_at: d14=32.3 d20=56.4
+
+[m=0, no injection]  The smell of rain on warm pavement always brings back childhood memories.
+
+[ocean layer=12 m= 2.0] The smell of rain on warm pavement always brings back childhood memories.
+[ocean layer=12 m= 4.0] The smell of rain on warm pavement always brings back childhood memories.
+[ocean layer=12 m= 8.0] The smell of freshly baked bread always makes me smile.
+[ocean layer=20 m= 2.0] The scent of rain on warm earth always fills me with a sense of wonder.
+[ocean layer=20 m= 4.0] The vast ocean holds mysteries beyond our wildest dreams. 🌊
+[ocean layer=20 m= 8.0] The ocean is vast and teeming with life, a world of wonders beyond our reach. 🌊       **Here are some facts about the ocean, just 
+[ocean layer=28 m= 2.0] The vastness of the ocean holds secrets yet to be discovered.
+[ocean layer=28 m= 4.0] The sun's the largest and the largest the the the the the the the the the the the the the the the the the the the the the the the 
+[ocean layer=28 m= 8.0] The the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the th
+
+[fire  layer=12 m= 2.0] The smell of rain on warm pavement always brings back childhood memories.
+[fire  layer=12 m= 4.0] The smell of rain on dry earth is both refreshing and nostalgic.
+[fire  layer=12 m= 8.0] The smell of rain always reminds me of childhood.
+[fire  layer=20 m= 2.0] The scent of rain on warm earth is both calming and exhilarating.
+[fire  layer=20 m= 4.0] The sun, a fiery ball of gas, dances across the sky, painting the world in hues of orange and red.
+[fire  layer=20 m= 8.0] Fire is both beautiful and dangerous, a mesmerizing dance that consumes the world in a vibrant spectrum.        **Science, yet bea
+[fire  layer=28 m= 2.0] Fireflies dancing on a summer night are a mesmerizing spectacle.
+[fire  layer=28 m= 4.0] Fire  ##  Fire  Fire  Fire  Fire  Fire  Fire  Fire  Fire  Fire  Fire  Fire  Fire  Fire  Fire  Fire  Fire  Fire  Fire
+[fire  layer=28 m= 8.0] Fire fire fire fire fire fire fire fire fire fire fire fire fire fire fire fire fire fire fire fire fire fire fire fire fire fire 
+
+[money layer=12 m= 2.0] The smell of freshly baked bread always makes me think of home.
+[money layer=12 m= 4.0] The smell of freshly baked bread always reminds me of home.
+[money layer=12 m= 8.0] The smell of freshly baked cookies is always a good reminder to be grateful.
+[money layer=20 m= 2.0] The world feels like a giant, complex puzzle with pieces constantly shifting.
+[money layer=20 m= 4.0] The best way to make money is to learn how to budget and save wisely.
+[money layer=20 m= 8.0] The world works in part through systems that are complex, but it's important to remember that you're not quite sure how, and it's 
+[money layer=28 m= 2.0] The smell of rain on hot pavement is a complex and fascinating topic.
+[money layer=28 m= 4.0] Money, money, money, money, money, money, money, money, money, money, money, money, money, money, money, money, money, money, mone
+[money layer=28 m= 8.0] Money money money money money money money money money money money money money money money money money money money money money mone
+
+done (734s)

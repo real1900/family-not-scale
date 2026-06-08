@@ -1,0 +1,17 @@
+/Users/sulemanimdad/Library/Python/3.9/lib/python/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+Loading checkpoint shards:   0%|          | 0/4 [00:00<?, ?it/s]Loading checkpoint shards:  25%|██▌       | 1/4 [00:03<00:09,  3.31s/it]Loading checkpoint shards:  50%|█████     | 2/4 [00:08<00:09,  4.60s/it]Loading checkpoint shards:  75%|███████▌  | 3/4 [00:14<00:05,  5.30s/it]Loading checkpoint shards: 100%|██████████| 4/4 [00:21<00:00,  5.76s/it]Loading checkpoint shards: 100%|██████████| 4/4 [00:21<00:00,  5.36s/it]
+model=unsloth/gemma-2-9b-it  L24 m=2.0   (per-concept introspection breakdown)
+concept      align   prime   INTRO    FCpick
+ocean       -0.315  +0.298  -0.612  forest  
+fire        +0.470  +0.085  +0.385  fire    <-hit
+music       -0.279  +0.233  -0.512  medicine
+bread       +0.033  +0.046  -0.013  ocean   
+dog         +0.703  +0.165  +0.537  dog     <-hit
+forest      +0.972  +0.332  +0.640  forest  <-hit
+money       +0.001  +0.042  -0.041  ocean   
+snow        +0.673  +0.244  +0.429  snow    <-hit
+war         +0.748  +0.334  +0.414  war     <-hit
+medicine    +0.679  +0.487  +0.192  medicine<-hit
+MEAN        +0.368  +0.227  +0.142    FC-acc=6/10
+concepts with INTRO>0: 6/10  (broad signal if most; fragile if ~2)

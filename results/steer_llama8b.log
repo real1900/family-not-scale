@@ -1,0 +1,58 @@
+/Users/sulemanimdad/Library/Python/3.9/lib/python/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+Fetching 4 files:   0%|          | 0/4 [00:00<?, ?it/s]Fetching 4 files:  25%|██▌       | 1/4 [08:37<25:51, 517.32s/it]Fetching 4 files:  50%|█████     | 2/4 [10:02<08:46, 263.37s/it]Fetching 4 files:  75%|███████▌  | 3/4 [10:10<02:26, 146.80s/it]Fetching 4 files: 100%|██████████| 4/4 [10:10<00:00, 152.75s/it]
+Loading checkpoint shards:   0%|          | 0/4 [00:00<?, ?it/s]Loading checkpoint shards:  25%|██▌       | 1/4 [00:05<00:15,  5.01s/it]Loading checkpoint shards:  50%|█████     | 2/4 [00:11<00:11,  5.68s/it]Loading checkpoint shards:  75%|███████▌  | 3/4 [00:19<00:06,  6.79s/it]Loading checkpoint shards: 100%|██████████| 4/4 [00:21<00:00,  4.81s/it]Loading checkpoint shards: 100%|██████████| 4/4 [00:21<00:00,  5.26s/it]
+The following generation flags are not valid and may be ignored: ['temperature', 'top_p']. Set `TRANSFORMERS_VERBOSITY=info` for more details.
+model=unsloth/Meta-Llama-3.1-8B-Instruct  device=mps  concepts=10  (paper-style 'Tell me about X')
+  [1/10] ocean     ||V|| mid=2.2  (681s)
+  [2/10] fire      ||V|| mid=2.1  (681s)
+  [3/10] music     ||V|| mid=2.6  (681s)
+  [4/10] bread     ||V|| mid=2.5  (681s)
+  [5/10] dog       ||V|| mid=2.3  (681s)
+  [6/10] forest    ||V|| mid=1.8  (681s)
+  [7/10] money     ||V|| mid=2.4  (681s)
+  [8/10] snow      ||V|| mid=2.6  (681s)
+  [9/10] war       ||V|| mid=3.3  (681s)
+  [10/10] medicine  ||V|| mid=2.1  (681s)
+
+saved V (10, 33, 4096) + resid_norm -> /Users/sulemanimdad/Documents/Developer/theman/research/cot_faithfulness/experiments/../results/steer_Meta-Llama-3.1-8B-Instruct.npz
+  resid_norm by depth: d8=5 d14=8 d20=12 d32=143
+
+======================================================================
+MANIPULATION CHECK  (inject over the ASSISTANT TURN only; does it steer the response?)
+======================================================================
+scale_at: d14=1.7 d20=4.5
+
+[m=0, no injection]  The shortest war in history was between Britain and Zanzibar on August 27, 1896, and lasted only 38 minutes.
+
+[ocean layer=10 m= 2.0] The majestic aurora borealis, also known as the northern lights, is a breathtaking natural phenomenon that can be seen in the Arct
+[ocean layer=10 m= 4.0] The world's largest waterfall, located in Africa, is over 350 feet tall.
+[ocean layer=10 m= 8.0] The Earth is a beautiful place.
+[ocean layer=16 m= 2.0] The deepest part of the ocean, the Mariana Trench, is home to an unexplored and mysterious ecosystem that covers over 70% of our p
+[ocean layer=16 m= 4.0] The deepest part of the Marine Aquarium, the Marinarium, is home to the largest and most mysterious part of our planet, the Marina
+[ocean layer=16 m= 8.0] The deepest, the Earth's the deepest, the the the the the the the the the the the the the the the the the the the the the the the 
+[ocean layer=24 m= 2.0] The world's largest living oceanic planet, the massive volcanic oceanic planet the Oceans the 2nd the planet of the star the Ocean
+[ocean layer=24 m= 4.0] The oceans cover the oceans the oceans the oceans the oceans the oceans the oceans the oceans the oceans the oceans the oceans the
+[ocean layer=24 m= 8.0] O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O
+
+[fire  layer=10 m= 2.0] The shortest war in recorded history was between Britain and Zanzibar on August 27, 1896, lasting only 38 minutes.
+[fire  layer=10 m= 4.0] The world's largest living organism, a fungus, covers over 2,200 square kilometers of the Earth's surface.
+[fire  layer=10 m= 8.0] I've been warned about the dangers of fire.
+[fire  layer=16 m= 2.0] The aurora borealis, a breathtaking display of colorful lights dancing across the night sky, is a mesmerizing natural phenomenon t
+[fire  layer=16 m= 4.0] Fire is a fascinating and powerful force that has been a crucial element in the history of humanity, a chemical reaction that has 
+[fire  layer=16 m= 8.0] Fetchemous, a 5000 fetchemous, a 5000 fetchemous, a 5000 fetchemous, a 5000 fetchemous
+[fire  layer=24 m= 2.0] Firefire firefire fire fire fire fire fire fire fire fire fire fire fire fire fire fire fire fire fire fire fire fire fire fire fi
+[fire  layer=24 m= 4.0] Firefirefirefirefirefirefirefirefirefirefirefirefirefirefirefirefirefirefirefirefirefirefirefirefirefirefirefirefirefirefirefirefi
+[fire  layer=24 m= 8.0] Fire fire fire fire fire fire fire fire fire fire fire fire fire fire fire fire fire fire fire fire fire fire fire fire fire fire 
+
+[money layer=10 m= 2.0] The world's largest living organism, a fungus called Armillaria ostoyae, covers over 2,200 acres in Oregon, USA.
+[money layer=10 m= 4.0] The world's largest living organism, the Great Barrier Reef, spans over 2,300 kilometers off the coast of Australia.
+[money layer=10 m= 8.0] Warning: I'm a neutral AI, but I'll try to provide helpful information while avoiding jargon.   1. **Investment**: Save money, spe
+[money layer=16 m= 2.0] The concept of money has been a complex and ever-evolving aspect of human society, influencing nearly every aspect of our lives.
+[money layer=16 m= 4.0] Money management is a crucial life skill that affects the stability and security of one's financial situation.
+[money layer=16 m= 8.0] The world's most complicated, and ever-changing, the world, and the world's ever-changing, the world, and the world's ever, the wo
+[money layer=24 m= 2.0] Money money money, money money money, money money money money money money money money money money money money money money money mo
+[money layer=24 m= 4.0] Money money money money money money money money money money money money money money money money money money money money money mone
+[money layer=24 m= 8.0] Money money money money money money money money money money money money money money money money money money money money money mone
+
+done (742s)

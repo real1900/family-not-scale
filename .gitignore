@@ -1,0 +1,11 @@
+# large reproducible activation dumps (210MB; regenerate via experiments/)
+results/*.npz
+
+# python
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+
+# os / scratch
+.DS_Store
+/tmp/

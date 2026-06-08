@@ -1,0 +1,12 @@
+{
+  "model": "mlx-community/DeepSeek-V2-Lite-Chat-4bit-mlx",
+  "name": "deepseek-v2-lite-chat",
+  "quant": "4bit",
+  "safe_refuse": 0.136,
+  "safe_caution": 0.252,
+  "unsafe_refuse": 0.8,
+  "unsafe_caution": 0.84,
+  "discrimination": 0.664,
+  "n_safe": 250,
+  "n_unsafe": 200
+}
